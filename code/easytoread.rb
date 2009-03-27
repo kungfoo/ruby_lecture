@@ -1,0 +1,1 @@
+5.times { print "Ruby rocks!" }

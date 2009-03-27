@@ -1,0 +1,124 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%		Kommentar
+%		Ein nettes old school template.......
+%		last modified: 27/03/07
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4book,11pt,twoside]{scrbook}
+\include{dude-template}
+
+\begin{document}
+\renewcommand{\theequation}{\thesection.\arabic}
+\addtokomafont{caption}{\small}
+\setkomafont{captionlabel}{\sffamily\bfseries}
+\numberwithin{equation}{section}
+\pagenumbering{Roman}
+\setcapindent*{1em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%		Titelseite
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\titlehead{
+	\begin{minipage}{0.6\textwidth}{\IFSlogo[50mm]}
+ 	\end{minipage}
+	\begin{minipage}{0.4\textwidth}
+		\footnotesize \rightline{HSR Rapperswil} \rightline{Institut für Software}
+	\end{minipage}
+ } 
+
+\author{Silvio Heuberger \\ Institut für Software}
+\subject{Lecture Notes}
+\title{Ruby, code-driven}
+\date{FS 2009}
+\publishers{}
+\dedication{} 
+\maketitle
+
+
+
+\tableofcontents
+
+\fontspec[Numbers={OldStyle}, Ligatures={Common}]{Adobe Garamond Pro}
+
+\chapter{Ruby? Noch eine Sprache?} % (fold)
+\label{cha:ruby_noch_eine_sprache_}
+
+\pagenumbering{arabic}
+\section{Was macht Ruby so speziell?} % (fold)
+\label{sec:was_macht_ruby_so_speziell_}
+Ruby ist eine spezielle Programmiersprache. Speziell für Programmierer, die sich statisch typisierte Sprachen wie Java, C\# und C++ gewöhnt sind. Folgende Punkte machen Ruby so speziell:
+
+\subsection*{Ruby ist einfach zu lesen} % (fold)
+\label{sub:ruby_ist_einfach_zu_lesen}
+
+\includegraphics[width=\textwidth]{img/easy_to_read.png}
+
+Lies folgenden Code laut vor:
+\lstinputlisting{code/easytoread.rb}
+
+Ruby ist »Coderspeak«, nicht nur eine Programmiersprache. Das obige Programm tut genau das, was erwartet wird, wenn man den Code vorliest.
+
+Ein weiteres Beispiel ist folgender Code:
+\lstinputlisting{code/easytoread2.rb}
+
+Der Code beendet das Programm, ausser wenn der String »Restaurant« als Teil »aura« enthält, was auch der Fall ist. Ruby nutzt geschickte \emph{Konventionen}, was die Methodennamen angeht um die Lesbarkeit des Codes zu verbessern. Eine Methode, die am Ende des Names ein Fragezeichen hat, ist eine Ja/Nein-Frage an das Objekt auf dem sie aufgerufen wird (also eine Methode die einen \texttt{boolean} als Rückgabewert hat).
+
+Das soll nicht heissen, dass Code der in einer anderen Sprache geschrieben ist schwer zu lesen ist. Vielfach ist das allerdings so und die Konventionen in Ruby machen viele Teile des Codes einfacher zu lesen und befreien ihn von Überraschungen. Mehr dazu im Kapitel \ref{cha:die_syntax_von_ruby}.
+
+
+% subsection ruby_ist_einfach_zu_lesen (end)
+
+\subsection*{Alles ist ein Objekt} % (fold)
+\label{sub:alles_ist_ein_objekt}
+In Ruby ist alles ein Objekt. Wirklich alles --- es gibt in Ruby keine Unterscheidung zwischen »primitiven Datentypen« und »benutzerdefinierten Typen«.
+Nachfolgend ein paar Beispiele von Methoden, die auf Instanzen von Klassen aufgerufen werden. Nachgestellt als Kommentar ist jeweils das Resultat eines Statements.
+\lstinputlisting{code/objects.rb}
+% subsection alles_ist_ein_objekt (end)
+% section was_macht_ruby_speziell (end)
+
+\section{Woher kommt Ruby und was ist das Ziel} % (fold)
+\label{sec:woher_kommt_ruby_und_was_ist_das_ziel}
+Ruby wurde von Yukihiro »Matz« Matsumoto in Japan im Jahre 1995 zum ersten Mal released. Weltweit erreichte die Sprache danach den Ruf einer einfach zu erlernenden, mächtigen und expressiven Sprache.
+Die Intention war damals ein »Perl, better than Perl« als Sprache zu entwerfen.
+
+Folgende Kernpunkte sollten Ruby auszeichnen:
+\begin{itemize}
+	\item Pure OO-Sprache
+	\item Simpel und frei von Überraschungen
+	\item Mächtige und flexible Sprache
+	\item Produktiv: Schnelle Entwicklung
+	\item Nicht kommerziell: Ruby ist Open-Source
+	\item Robust: Ruby hat einen Garbage-Collector
+	\item Flexibel: Dynamisch typisierte Sprache
+\end{itemize}
+
+% section woher_kommt_ruby_und_was_ist_das_ziel (end)
+
+% chapter ruby_noch_eine_sprache_ (end)
+
+
+
+
+\chapter{Die Syntax von Ruby} % (fold)
+\label{cha:die_syntax_von_ruby}
+
+% chapter die_syntax_von_ruby (end)
+
+
+\chapter*{Quellen} % (fold)
+\label{cha:quellen}
+Folgende Quellen lieferten Material für diese Lecture Notes:
+
+\begin{itemize}
+	\item »Why's (poignant) guide to ruby«\footnote{\url{http://poignantguide.net/ruby/}}: auflockernde Comics mit den Two Foxes.
+\end{itemize}
+% chapter quellen (end)
+
+%\bibliography{FungiLit}                                                                                                                                                %\bibliographystyle{plain}                                                                                                                                                     %                         \nocite{*}%
+%
+
+
+\end{document}
