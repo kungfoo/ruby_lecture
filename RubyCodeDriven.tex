@@ -77,6 +77,43 @@ In Ruby ist alles ein Objekt. Wirklich alles --- es gibt in Ruby keine Untersche
 Nachfolgend ein paar Beispiele von Methoden, die auf Instanzen von Klassen aufgerufen werden. Nachgestellt als Kommentar ist jeweils das Resultat eines Statements.
 \lstinputlisting{code/objects.rb}
 % subsection alles_ist_ein_objekt (end)
+
+
+\subsection*{Duck-Typing} % (fold)
+\label{sub:duck_typing}
+\begin{quotation}\swashed{»When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck.« – James Whitcomb Riley}
+\end{quotation}
+
+Duck-Typing bedeutet dass erst zur Laufzeit überprüft wird, ob ein Objekt über bestimmte Merkmale — wie zum Beispiel Methodennamen und Attribute — verfügt, was zu einer erhöhten Flexibiltät führt. Es wird aber auch die Möglichkeit reduziert, Typen zur Compile-Zeit statisch zu prüfen und solche Fehler im Programm zu finden.
+
+Ein längerer Abschnitt zu Duck-Typing findet sich später im Skript (siehe XXX). Hier einfach noch kurz ein Stück Code, das aufzeigt, wie flexibel und doch ausdrucksstark Code mit Duck-Typing werden kann. Über die Syntax mache man sich hier noch nicht allzu viele Gedanken...
+
+\lstinputlisting{code/ducks.rb}
+
+Folgendes gilt für obigen Code:
+\begin{itemize}
+	\item Vögel haben einen Namen.
+	\item Enten sind auch Vögel, darum haben auch sie einen Namen.
+	\item Enten haben eine Methode \texttt{quack()}, bei der sie ein entenartiges Geräusch von sich geben.
+	\item Die Codezeile 17 iteriert über alle Vögel in \texttt{birds} und falls \texttt{bird.respond\_to? :quack} dann wird diese Methode aufgerufen. Andernfalls ist der Vogel keine Ente.
+\end{itemize}
+
+Die Ausgabe des Programms ist dann also:
+
+\begin{lstlisting}
+Gustav is not a duck!
+Donald: quack!
+\end{lstlisting}
+
+Code wie der obige lässt sich mit \texttt{instanceof()} auch noch relativ kurz und prägnant in Java schreiben. Er wird aber schnell einiges komplizierter. Mehr dazu aber später.
+
+\subsection*{Noch viel mehr!} % (fold)
+\label{sub:noch_viel_mehr_}
+Dies ist nur ein ganz kleiner Ausschnitt, noch viel mehr macht Ruby zu einer speziellen, attraktiven Programmiersprache. Darauf wird aber erst in nachfolgenden Kapiteln eingegangen. Jetzt noch eine kurze Buzzword-Zusammenfassung, was Ruby so alles kann...
+% subsection noch_viel_mehr_ (end)
+
+% subsection duck_typing (end)
+
 % section was_macht_ruby_speziell (end)
 
 \section{Woher kommt Ruby und was ist das Ziel} % (fold)
@@ -104,7 +141,7 @@ Folgende Kernpunkte sollten Ruby auszeichnen:
 
 \chapter{Die Syntax von Ruby} % (fold)
 \label{cha:die_syntax_von_ruby}
-Die Syntax von Ruby ist kru, prägnant und sprechend. Ruby wurde bewusst als »sprechbare« Sprache designt.
+Die Syntax von Ruby ist kurz, prägnant und sprechend. Ruby wurde bewusst als »sprechbare« Sprache designt.
 % chapter die_syntax_von_ruby (end)
 
 
