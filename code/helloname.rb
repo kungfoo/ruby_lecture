@@ -1,3 +1,5 @@
 class HelloName
-  def 
+  def foo
+    asdfa34343 = "fsdaf"
+  end
 end
