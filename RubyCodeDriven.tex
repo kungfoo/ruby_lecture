@@ -151,9 +151,65 @@ Die Syntax von Ruby ist kurz, prägnant und sprechend. Ruby wurde bewusst als »
 
 \section{Variablen} % (fold)
 \label{sub:variablen}
-Variablen in Ruby bestehen aus Kleinbuchstaben, Zahlen und Underscores. Variablen können direkt einen Wert zugewiesen bekommen. Gültige Beispiele wären:
+Variablennamen in Ruby bestehen aus Kleinbuchstaben, Zahlen und Underscores, dürfen aber nicht mit einer Zahl anfangen. Variablen können direkt einen Wert zugewiesen bekommen.
+
+Normalerweise werden Variablennamen in Ruby nicht in CamelCase geschrieben, wie das in Java oder C der Fall ist, sondern mit Underscores zusammengehängt. Solche Style-Guidelines können aber zum Beispiel für ein gesamtes Projekt geändert werden, wobei man der Opensourcewelt eine Freude macht, wenn man sich daran hält...
+
+Gültige Beispiele wären:
 \lstinputlisting{code/variables.rb}
 % section variablen (end)
+
+
+
+\section{Zahlen} % (fold)
+\label{sec:zahlen}
+Die einfachsten Zahlen sind Ganzzahlen (\texttt{Integer}). Diese bestehen in Ruby aus einer beliebig langen Folge — richtig gelesen, Ruby hat automatischen Support für grosse Zahlen mit hunderten von Stellen — von Ziffern mit vorgestelltem Minus- oder Pluszeichen.
+
+\lstinputlisting{code/integers.rb}
+% section zahlen (end)
+
+
+\section{Strings} % (fold)
+\label{sec:strings}
+Strings in Ruby kommen in verschiedenen Quote-Gewändern.
+\begin{enumerate}
+	\item Double-Quoted
+	\item Single-Qouted
+	\item General Delimited, dabei wird nach \% ein Character angegeben, mit dem der Anfang und das Ende des Strings markiert ist. Klammern sind auch möglich.
+\end{enumerate}
+
+Folgender Code illustiert das:
+\lstinputlisting{code/strings.rb}
+
+Diese Strings werden dann wie folgt ausgegeben (Code bis Zeile 8):
+\begin{lstlisting}
+Brief message to the user 
+On a new line!
+Single quotes too.\n Beware of the effect, though...
+This is a "special" string. 'Lots' of quotes.
+\end{lstlisting}
+% section strings (end)
+
+In Strings können auch mit der speziellen Zeichenfolge \#\{[Variable]\} Werte von Variablen eingesetzt werden. Das ergibt dann ab Zeile 8 folgenden Output:
+
+\begin{lstlisting}
+This article costs: 7.23$
+\end{lstlisting}
+
+\section{Symbols} % (fold)
+\label{sec:symbols}
+Symbols sind ein spezielles Element von Ruby, verglichen mit anderen Sprachen. Ein Symbol ist genau gleich wie ein Variablenname definiert, sie fangen aber mit \emph{einem Doppelpunkt} an.
+
+Symbols sind \emph{leichtgewichtige} Strings. Das heisst, ein bestimmter Name für ein Symbol erzeugt immer das gleiche Symbol, egal wie oft es im Sourcecode vorkommt. Als Vergleich: Ein String-Literal (auch in Java) erzeugt \emph{immer} ein neues String-Objekt. Normalerweise verwendet man Symbols dort, wo ein String gebraucht wird, der aber nie auf dem Screen ausgegeben wird, wie zum Beispiel Namen von Methoden oder Hash-Elementen. (Siehe auch das Beispiel zu Duck-Typing)
+
+\lstinputlisting{code/symbols.rb}
+% section symbols (end)
+
+
+
+
+
+
 
 
 \chapter*{Quellen} % (fold)

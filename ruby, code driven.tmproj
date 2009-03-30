@@ -20,15 +20,13 @@
 			<key>filename</key>
 			<string>README</string>
 			<key>lastUsed</key>
-			<date>2009-03-30T08:11:38Z</date>
-			<key>selected</key>
-			<true/>
+			<date>2009-03-30T16:42:48Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>dude-template.tex</string>
 			<key>lastUsed</key>
-			<date>2009-03-30T08:21:42Z</date>
+			<date>2009-03-30T17:30:29Z</date>
 		</dict>
 		<dict>
 			<key>expanded</key>
@@ -44,27 +42,15 @@
 			<key>filename</key>
 			<string>RubyCodeDriven.tex</string>
 			<key>lastUsed</key>
-			<date>2009-03-30T08:21:42Z</date>
+			<date>2009-03-30T17:42:25Z</date>
+			<key>selected</key>
+			<true/>
 		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
-		<key>README</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>25</integer>
-				<key>line</key>
-				<integer>3</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
 		<key>RubyCodeDriven.tex</key>
 		<dict>
 			<key>caret</key>
@@ -72,12 +58,12 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>155</integer>
+				<integer>203</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
-			<integer>0</integer>
+			<integer>147</integer>
 			<key>firstVisibleLine</key>
-			<integer>126</integer>
+			<integer>177</integer>
 		</dict>
 		<key>code/ducks.rb</key>
 		<dict>
@@ -93,46 +79,45 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>code/objects.rb</key>
+		<key>code/easytoread.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>22</integer>
+				<integer>31</integer>
 				<key>line</key>
-				<integer>4</integer>
+				<integer>0</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>dude-template.tex</key>
+		<key>code/symbols.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>92</integer>
+				<integer>33</integer>
 				<key>line</key>
-				<integer>61</integer>
+				<integer>8</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>83</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
 		<string>RubyCodeDriven.tex</string>
+		<string>code/symbols.rb</string>
 		<string>code/ducks.rb</string>
-		<string>code/objects.rb</string>
-		<string>dude-template.tex</string>
-		<string>README</string>
+		<string>code/easytoread.rb</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{470, 130}, {1150, 798}}</string>
+	<string>{{385, 135}, {1150, 798}}</string>
 </dict>
 </plist>
