@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>README</string>
+	<string>RubyCodeDriven.tex</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -20,7 +20,7 @@
 			<key>filename</key>
 			<string>README</string>
 			<key>lastUsed</key>
-			<date>2009-03-27T16:25:20Z</date>
+			<date>2009-03-30T08:11:38Z</date>
 			<key>selected</key>
 			<true/>
 		</dict>
@@ -28,7 +28,7 @@
 			<key>filename</key>
 			<string>dude-template.tex</string>
 			<key>lastUsed</key>
-			<date>2009-03-27T16:25:20Z</date>
+			<date>2009-03-30T08:21:42Z</date>
 		</dict>
 		<dict>
 			<key>expanded</key>
@@ -44,7 +44,7 @@
 			<key>filename</key>
 			<string>RubyCodeDriven.tex</string>
 			<key>lastUsed</key>
-			<date>2009-03-27T16:25:13Z</date>
+			<date>2009-03-30T08:21:42Z</date>
 		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
@@ -56,9 +56,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>37</integer>
+				<integer>25</integer>
 				<key>line</key>
-				<integer>5</integer>
+				<integer>3</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -70,39 +70,69 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>105</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>106</integer>
+				<integer>155</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>81</integer>
+			<integer>126</integer>
+		</dict>
+		<key>code/ducks.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>39</integer>
+				<key>line</key>
+				<integer>20</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>code/objects.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>22</integer>
+				<key>line</key>
+				<integer>4</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
 		</dict>
 		<key>dude-template.tex</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>27</integer>
+				<integer>92</integer>
 				<key>line</key>
-				<integer>82</integer>
+				<integer>61</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>61</integer>
+			<integer>83</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
 		<string>RubyCodeDriven.tex</string>
+		<string>code/ducks.rb</string>
+		<string>code/objects.rb</string>
 		<string>dude-template.tex</string>
 		<string>README</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{294, 54}, {1150, 798}}</string>
+	<string>{{470, 130}, {1150, 798}}</string>
 </dict>
 </plist>
