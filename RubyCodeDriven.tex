@@ -198,16 +198,76 @@ This article costs: 7.23$
 
 \section{Symbols} % (fold)
 \label{sec:symbols}
-Symbols sind ein spezielles Element von Ruby, verglichen mit anderen Sprachen. Ein Symbol ist genau gleich wie ein Variablenname definiert, sie fangen aber mit \emph{einem Doppelpunkt} an.
+Symbols sind ein spezielles Element von Ruby, verglichen mit anderen Sprachen. Ein Symbol ist genau gleich wie ein Variablenname/String definiert, sie fangen aber mit \emph{einem Doppelpunkt} an.
 
-Symbols sind \emph{leichtgewichtige} Strings. Das heisst, ein bestimmter Name für ein Symbol erzeugt immer das gleiche Symbol, egal wie oft es im Sourcecode vorkommt. Als Vergleich: Ein String-Literal (auch in Java) erzeugt \emph{immer} ein neues String-Objekt. Normalerweise verwendet man Symbols dort, wo ein String gebraucht wird, der aber nie auf dem Screen ausgegeben wird, wie zum Beispiel Namen von Methoden oder Hash-Elementen. (Siehe auch das Beispiel zu Duck-Typing)
+Symbols sind \emph{leichtgewichtige} Strings. Ein bestimmter Name für ein Symbol erzeugt immer das gleiche Symbol, egal wie oft es im Sourcecode vorkommt.
+
+Als Vergleich: Ein String-Literal (auch in Java) erzeugt \emph{immer} ein neues String-Objekt. Normalerweise verwendet man Symbols dort, wo ein String gebraucht wird, der aber nie auf dem Screen ausgegeben wird, wie zum Beispiel Namen von Methoden oder Hash-Elementen. (Siehe auch das Beispiel zu Duck-Typing)
 
 \lstinputlisting{code/symbols.rb}
 % section symbols (end)
 
+\section{Konstanten} % (fold)
+\label{sec:konstanten}
+Konstanten werden in Ruby geschrieben wie Variablen, fangen aber mit einem \emph{Grossbuchstaben} an. Wenn versucht wird den Wert einer Konstanten zu ändern, so funktioniert das zwar, aber Ruby zeigt uns eine Warnung, dass wir gerade eine bereits initialisierte Konstante geändert haben.
+
+Konstanten sollte man besser nicht ändern!
+
+\lstinputlisting{code/constants.rb}
+
+Wird dieser Code ausgeführt, so zeigt sich Ruby nur mässig erfreut — der Code läuft aber weiter:
+\begin{lstlisting}
+/dev/keyboard0
+constants.rb:2: warning: already initialized constant File_Location
+\end{lstlisting}
+% section konstanten (end)
 
 
+\section{Methoden} % (fold)
+\label{sec:methoden}
+Methoden in Ruby werden durch einen '.' an eine Variable oder Konstante angehängt. Es gilt die Konvetion, dass Methoden die einen \texttt{boolean} zurückliefern am Ende ihres Namens ein '?' tragen. Methoden, die ein Objekt direkt verändern und nicht eine Kopie eines veränderten Objektes zurückgeben, tragen ein '!' am Ende ihres Namens.
 
+Die Klammern können in Ruby in vielen Fällen weggelassen werden, was je nach Situation die Lesbarkeit des Codes erhöht.
+
+\lstinputlisting{code/methods.rb}
+
+Der Methodenaufruf auf Zeile 1 gibt ein neues \texttt{Door}-Objekt zurück das geöffnet ist. \texttt{open!} öffnet direkt die Türe auf der die Methode aufgerufen wurde.
+
+Diese Notation wird dann wichtig, wenn Methode der Ruby-Library verwendet werden, wo es oft zwei Versionen einer Methode gibt — eine mit '!' und eine ohne.
+% section methoden (end)
+
+
+\section{Klassen, Attribute} % (fold)
+\label{sec:klassen_methoden_attribute}
+Gleich ein Beispiel einer Klasse in Ruby:
+
+\lstinputlisting{code/song.rb}
+
+Output:
+\begin{lstlisting}
+'bloody mary' is about 3 minutes long!
+'bloody mary' is now about 8 minutes long!
+\end{lstlisting}
+
+Dieses Beispiel zeigt gleich einige Aspekte auf, wie in Ruby eine Klasse geschrieben wird:
+
+\begin{enumerate}
+	\item \texttt{attr\_accessor} generiert Getter und Setter für Properties. (Und nimmt als Werte offenbar Symbols gerne entgegen...)
+	\item Instanzvariablen fangen mit einem '@' an.
+	\item Klassenvariablen mit '@@'.
+	\item Wir können ein Property, das einen Setter hat einfach mit '=' zuweisen.
+	\item Das \texttt{return}-Statement ist optional, da der letze Wert in der Funktion zurückgegeben wird. Dies ist nur bei \emph{kurzen} Methoden sinnvoll.
+\end{enumerate}
+
+Alle Klassen in Ruby sind \emph{offen} für Erweiterung, was sehr praktisch sein kann und den Code kürzer macht, weil nicht für jedes Feature eine neue Klasse geschrieben werden muss, wenn die Funktion in eine andere Klasse \emph{gehört}.
+
+\lstinputlisting{code/prime.rb}
+
+Dies sollte man aber nicht tun — auch wenn man kann:
+
+\lstinputlisting{code/plusminus.rb}
+
+% section klassen_methoden_attribute (end)
 
 
 
