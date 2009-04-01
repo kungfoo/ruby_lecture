@@ -307,6 +307,9 @@ Dies sollte man aber nicht tun — auch wenn man kann:
 \lstinputlisting{code/plusminus.rb}
 % section klassen_methoden_attribute (end)
 
+
+
+
 \section{Ranges}
 Bereiche können in Ruby elegant und kurz definiert werden. Dabei bedeutet der '..'-Operator eine inklusive Bereichsangabe und '...' eine exklusive.
 
@@ -314,9 +317,73 @@ Die Methode '===' gibt an, ob ein Wert Teil einer Range ist oder nicht.
 
 \lstinputlisting{code/ranges.rb}
 
-\section{Kontrollfluss}
 
-TODO: add stuff here.
+\section{Arrays} % (fold)
+\label{sec:arrays}
+Arrays von Objekten werden in Ruby zwischen '[]' geschrieben. Die eckigen Klammern werden auch als Indexoperator verwendet.
+
+Dabei kann der Index auch negativ werden. Es wird dann von hinten abgezählt, wobei das letzte Element im Array den Index $-1$ hat — logischerweise ist $-0 == 0$ und damit dies der Index des ersten Elements im Array.
+
+\lstinputlisting{code/arrays1.rb}
+
+Output:
+\begin{lstlisting}
+3
+9
+8
+
+2
+3
+Harmless String
+Duck, id: 1
+Duck, id: 2
+Duck, id: 3
+\end{lstlisting}
+
+Weiter können dem Indexoperator auch Ranges angegeben werden. Die Notation ist dabei die gleiche wie bereits gesehen:
+
+\lstinputlisting{code/arrays2.rb}
+
+Output:
+\begin{lstlisting}
+2,3,4,5
+6
+7
+8
+9
+\end{lstlisting}
+
+
+Weitere Tricks und Kniffe mit Arrays, Strings und Hashes findest du im Kapitel XXX wo einige Methoden dieser Klassen kurz erklärt werden.
+% section arrays (end)
+
+
+\section{Kontrollfluss} % (fold)
+\label{sec:kontrollfluss}
+
+\subsubsection*{If, Unless} % (fold)
+\label{ssub:if_unless}
+Die Keywords \texttt{if} und \texttt{unless} steuern den konditionalen Fluss eines Ruby-Programms. \texttt{unless(condition)} hat dabei die Bedeutung von \texttt{if(! condition)}.
+
+Die beiden Keywords können auch einem einzelnen Statement nachgestellt werden.
+
+\lstinputlisting{code/control.rb}
+% subsubsection if_unless (end)
+
+\subsubsection{Iteration über Elemente} % (fold)
+\label{ssub:iteration_über_elemente}
+
+% subsubsection iteration_über_elemente (end)
+
+% section kontrollfluss (end)
+
+
+\section{Blocks und Closures} % (fold)
+\label{sec:blocks_und_closures}
+
+
+% section blocks_und_closures (end)
+
 
 
 \chapter*{Quellen} % (fold)
