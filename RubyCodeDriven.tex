@@ -222,6 +222,15 @@ constants.rb:2: warning: already initialized constant File_Location
 \end{lstlisting}
 % section konstanten (end)
 
+\section{Parallele Zuweisung von Variablen}
+Ruby unterstützt die parallele Zuweisung von Variablen. Das ermöglicht zum Beispiel die Funktion \texttt{swap(a,b)} für zwei Elemente ganz elegant zu schreiben:
+
+\lstinputlisting{code/swap.rb}
+
+Weiter können auch mehrere Variablen elegant und kurz auf Standardwerte gesetzt werden. Die \emph{kann} die Lesbarkeit erhöhen, kann aber auch am falschen Ort benutzt werden.
+
+\lstinputlisting{code/parallel.rb}
+
 
 \section{Methoden} % (fold)
 \label{sec:methoden}
@@ -236,7 +245,22 @@ Der Methodenaufruf auf Zeile 1 gibt ein neues \texttt{Door}-Objekt zurück das g
 Diese Notation wird dann wichtig, wenn Methode der Ruby-Library verwendet werden, wo es oft zwei Versionen einer Methode gibt — eine mit '!' und eine ohne.
 % section methoden (end)
 
+\section{Default Argumente, Variable Anzahl Argumente}
+Ruby unterstützt auch auf einfache Weise Standardwerte für Argumente. Dabei wird der Wert einfach zusammen mit dem Namen des Arguments mitgeschrieben.
 
+\lstinputlisting{code/arguments.rb}
+
+Output:
+\begin{lstlisting}
+Hello! Hello! Hello! 
+12
+Goodbye! Goodbye! Goodbye! Goodbye! Goodbye! 
+\end{lstlisting}
+
+Auffallend ist hierbei, dass die Argumente von vorne nach hinten ihre default-Werte erhalten. Wird also nur 4 als Wert angegeben, so gibt die Methode das Resultat von 4*3 = 12 aus.
+
+
+Eine variable Anzahl Argumente kann in Ruby erreicht werden indem der Name des Argument mit einem 
 \section{Klassen, Attribute} % (fold)
 \label{sec:klassen_methoden_attribute}
 Gleich ein Beispiel einer Klasse in Ruby:
@@ -266,8 +290,16 @@ Alle Klassen in Ruby sind \emph{offen} für Erweiterung, was sehr praktisch sein
 Dies sollte man aber nicht tun — auch wenn man kann:
 
 \lstinputlisting{code/plusminus.rb}
-
 % section klassen_methoden_attribute (end)
+
+\section{Ranges}
+Bereiche können in Ruby elegant und kurz definiert werden. Dabei bedeutet der '..'-Operator eine inklusive Bereichsangabe und '...' eine exklusive.
+
+Die Methode '===' gibt an, ob ein Wert Teil einer Range ist oder nicht.
+
+\lstinputlisting{code/ranges.rb}
+
+\section{Kontrollfluss}
 
 
 
