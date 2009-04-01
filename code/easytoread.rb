@@ -1,1 +1,1 @@
-5.times { print "Ruby rocks!" }
+4.times { print "Ruby! " }
