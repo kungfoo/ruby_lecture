@@ -260,7 +260,17 @@ Goodbye! Goodbye! Goodbye! Goodbye! Goodbye!
 Auffallend ist hierbei, dass die Argumente von vorne nach hinten ihre default-Werte erhalten. Wird also nur 4 als Wert angegeben, so gibt die Methode das Resultat von 4*3 = 12 aus.
 
 
-Eine variable Anzahl Argumente kann in Ruby erreicht werden indem der Name des Argument mit einem 
+Eine variable Anzahl Argumente kann in Ruby erreicht werden indem der Name des Arguments mit einem Splat versehen wird. Logischerweise kann nur das letzte Argument einen Splat tragen, denn wie sollte Ruby sonst wissen, wo die variable Anzahl Argumente anfängt und wo sie aufhört.
+
+\lstinputlisting{code/variable_arguments.rb}
+
+Output:
+
+\begin{lstlisting}
+3
+45
+\end{lstlisting}
+
 \section{Klassen, Attribute} % (fold)
 \label{sec:klassen_methoden_attribute}
 Gleich ein Beispiel einer Klasse in Ruby:
