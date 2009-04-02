@@ -7,6 +7,6 @@ puts single
 puts general
 
 price = 7.23
-price_tag = "This article costs: #{price}$"
+price_tag = "This article costs: #{price} CHF"
 
 puts price_tag

@@ -193,7 +193,7 @@ This is a "special" string. 'Lots' of quotes.
 In Strings können auch mit der speziellen Zeichenfolge \#\{[Variable]\} Werte von Variablen eingesetzt werden. Das ergibt dann ab Zeile 8 folgenden Output:
 
 \begin{lstlisting}
-This article costs: 7.23$
+This article costs: 7.23 CHF
 \end{lstlisting}
 
 \section{Symbols} % (fold)
@@ -358,6 +358,26 @@ Weitere Tricks und Kniffe mit Arrays, Strings und Hashes findest du im Kapitel X
 % section arrays (end)
 
 
+
+
+
+\section{Blocks} % (fold)
+\label{sec:blocks_und_closures}
+Blöcke sind ein essentieller Teil der Sprache Ruby. Code in geschweiften Klammern ist ein Block. Allerdings ist ein Block mehr als nur Code der gruppiert ist.
+
+Ein Block in Ruby eigentlich immer zusammen mit einer Methode verwendet. Damit kann man zum Beispiel Funktionen die über Elemente iterieren Code mitgeben, der dann für jedes Element ausgeführt wird. Das sieht dann zum Beispiel so aus:
+
+\lstinputlisting{code/blocks1.rb}
+
+
+
+% section blocks_und_closures (end)
+
+
+
+
+
+
 \section{Kontrollfluss} % (fold)
 \label{sec:kontrollfluss}
 
@@ -370,19 +390,25 @@ Die beiden Keywords können auch einem einzelnen Statement nachgestellt werden.
 \lstinputlisting{code/control.rb}
 % subsubsection if_unless (end)
 
-\subsubsection{Iteration über Elemente} % (fold)
-\label{ssub:iteration_über_elemente}
-
-% subsubsection iteration_über_elemente (end)
+\subsubsection*{Iteration mit Zähler}
 
 % section kontrollfluss (end)
 
 
-\section{Blocks und Closures} % (fold)
-\label{sec:blocks_und_closures}
 
 
-% section blocks_und_closures (end)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
