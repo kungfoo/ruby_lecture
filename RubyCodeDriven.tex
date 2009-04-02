@@ -149,6 +149,10 @@ Folgende Kernpunkte sollten Ruby auszeichnen:
 Die Syntax von Ruby ist kurz, prägnant und sprechend. Ruby wurde bewusst als »sprechbare« Sprache designt. Wenn eine Sprache der natürlichen Sprache ähnelt, so ist sie auch einfacher zu lesen und verstehen.
 % chapter die_syntax_von_ruby (end)
 
+
+
+
+
 \section{Variablen} % (fold)
 \label{sub:variablen}
 Variablennamen in Ruby bestehen aus Kleinbuchstaben, Zahlen und Underscores, dürfen aber nicht mit einer Zahl anfangen. Variablen können direkt einen Wert zugewiesen bekommen.
@@ -161,12 +165,19 @@ Gültige Beispiele wären:
 
 
 
+
+
+
 \section{Zahlen} % (fold)
 \label{sec:zahlen}
 Die einfachsten Zahlen sind Ganzzahlen (\texttt{Integer}). Diese bestehen in Ruby aus einer beliebig langen Folge — richtig gelesen, Ruby hat automatischen Support für grosse Zahlen mit hunderten von Stellen — von Ziffern mit vorgestelltem Minus- oder Pluszeichen.
 
 \lstinputlisting{code/integers.rb}
 % section zahlen (end)
+
+
+
+
 
 
 \section{Strings} % (fold)
@@ -196,6 +207,10 @@ In Strings können auch mit der speziellen Zeichenfolge \#\{[Variable]\} Werte v
 This article costs: 7.23 CHF
 \end{lstlisting}
 
+
+
+
+
 \section{Symbols} % (fold)
 \label{sec:symbols}
 Symbols sind ein spezielles Element von Ruby, verglichen mit anderen Sprachen. Ein Symbol ist genau gleich wie ein Variablenname/String definiert, sie fangen aber mit \emph{einem Doppelpunkt} an.
@@ -206,6 +221,11 @@ Als Vergleich: Ein String-Literal (auch in Java) erzeugt \emph{immer} ein neues 
 
 \lstinputlisting{code/symbols.rb}
 % section symbols (end)
+
+
+
+
+
 
 \section{Konstanten} % (fold)
 \label{sec:konstanten}
@@ -222,6 +242,10 @@ constants.rb:2: warning: already initialized constant File_Location
 \end{lstlisting}
 % section konstanten (end)
 
+
+
+
+
 \section{Parallele Zuweisung von Variablen}
 Ruby unterstützt die parallele Zuweisung von Variablen. Das ermöglicht zum Beispiel die Funktion \texttt{swap(a,b)} für zwei Elemente ganz elegant zu schreiben:
 
@@ -230,6 +254,10 @@ Ruby unterstützt die parallele Zuweisung von Variablen. Das ermöglicht zum Bei
 Weiter können auch mehrere Variablen elegant und kurz auf Standardwerte gesetzt werden. Die \emph{kann} die Lesbarkeit erhöhen, kann aber auch am falschen Ort benutzt werden.
 
 \lstinputlisting{code/parallel.rb}
+
+
+
+
 
 
 \section{Methoden} % (fold)
@@ -244,6 +272,67 @@ Der Methodenaufruf auf Zeile 1 gibt ein neues \texttt{Door}-Objekt zurück das g
 
 Diese Notation wird dann wichtig, wenn Methode der Ruby-Library verwendet werden, wo es oft zwei Versionen einer Methode gibt — eine mit '!' und eine ohne.
 % section methoden (end)
+
+
+
+
+
+
+\section{Blocks und Closures} % (fold)
+\label{sec:blocks_und_closures}
+Blöcke sind ein essentieller Teil der Sprache Ruby. Code in geschweiften Klammern ist ein Block. Allerdings ist ein Block mehr als nur Code der gruppiert ist.
+
+Ein Block wird in Ruby eigentlich immer zusammen mit einer Methode verwendet. Damit kann man zum Beispiel Funktionen die über alle Elemente einer Collection iterieren Code mitgeben, der dann für jedes Element ausgeführt wird — so wird der Code innerhalb des Blocks zum \emph{Visitor}.
+
+Das sieht dann zum Beispiel so aus:
+
+\lstinputlisting{code/blocks1.rb}
+% section blocks_und_closures (end)
+
+Wenn der Code innerhalb des Blockes mehr als ein Statement enthält, so können die '\{\}' durch \texttt{do/end} ersetzt werden:
+
+\lstinputlisting{code/blocks2.rb}
+
+\subsection*{Methode die einen Block erhält} % (fold)
+\label{sub:methode_die_einen_block_erhält}
+Eine Methode wie zum Beispiel \texttt{Array::each} zu schreiben ist in Ruby ganz einfach. Das Keyword \texttt{yield} macht es möglich:
+
+\lstinputlisting{code/yield1.rb}
+
+Output:
+\begin{lstlisting}
+Hello yield!
+Hello yield!
+Hello yield!
+["meh.", "meh.", "meh."]
+\end{lstlisting}
+% subsection methode_die_einen_block_erhält (end)
+
+\subsection*{Parameter für Blöcke} % (fold)
+\label{sub:parameter_für_blöcke}
+Blöcke können auch Parameter erhalten. Diese werden zwischen zwei Pipes geschrieben.
+
+
+Der Code der innerhalb des Blocks ausgeführt wird hat — wie jedes Statement in Ruby — einen Wert. Damit kann der Funktion durch einen Block auch ein Wert zurückgegeben werden.
+
+Kombiniert man die zwei Konzepte Parameter für Blöcke und den Rückgabewert des Codes, der im Block ausgeführt wird, so erhält man ein mächtiges Konzept, das sich am besten durch etwas Code erschliesst:
+
+\lstinputlisting{code/sort.rb}
+
+Output:
+\begin{lstlisting}
+[1, 2, 3, 3, 4, 5, 5, 7, 8, 9, 32, 63]
+[63, 32, 9, 8, 7, 5, 5, 4, 3, 3, 2, 1]
+\end{lstlisting}
+% subsection parameter_für_blöcke (end)
+
+Wie schön ist das um ein Array von Objekten umgekehrt zu sortieren?
+
+Der Code innerhalb des Blockes erhält die zwei Parameter a und b. Der Block wird dann beim Sortieren des Arrays dazu verwendet, die Ordnungsrelation der Elemente zu bestimmen. Der \emph{Spaceship-Operator} <=> ist dabei analog definiert, wie zum Beispiel in Java die Methode \texttt{compareTo()}.
+
+
+
+
 
 
 
@@ -272,6 +361,9 @@ Output:
 3
 45
 \end{lstlisting}
+
+
+
 
 
 
@@ -306,6 +398,9 @@ Dies sollte man aber nicht tun — auch wenn man kann:
 
 \lstinputlisting{code/plusminus.rb}
 % section klassen_methoden_attribute (end)
+
+
+
 
 
 
@@ -361,17 +456,7 @@ Weitere Tricks und Kniffe mit Arrays, Strings und Hashes findest du im Kapitel X
 
 
 
-\section{Blocks} % (fold)
-\label{sec:blocks_und_closures}
-Blöcke sind ein essentieller Teil der Sprache Ruby. Code in geschweiften Klammern ist ein Block. Allerdings ist ein Block mehr als nur Code der gruppiert ist.
 
-Ein Block in Ruby eigentlich immer zusammen mit einer Methode verwendet. Damit kann man zum Beispiel Funktionen die über Elemente iterieren Code mitgeben, der dann für jedes Element ausgeführt wird. Das sieht dann zum Beispiel so aus:
-
-\lstinputlisting{code/blocks1.rb}
-
-
-
-% section blocks_und_closures (end)
 
 
 
