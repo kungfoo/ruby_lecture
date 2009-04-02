@@ -13,6 +13,8 @@
 			<string>code</string>
 			<key>regexFolderFilter</key>
 			<string>!.*/(\.[^/]*|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle))$</string>
+			<key>selected</key>
+			<true/>
 			<key>sourceDirectory</key>
 			<string>code</string>
 		</dict>
@@ -20,13 +22,13 @@
 			<key>filename</key>
 			<string>README</string>
 			<key>lastUsed</key>
-			<date>2009-04-01T14:08:42Z</date>
+			<date>2009-04-02T12:56:19Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>dude-template.tex</string>
 			<key>lastUsed</key>
-			<date>2009-04-01T14:08:41Z</date>
+			<date>2009-04-02T15:01:41Z</date>
 		</dict>
 		<dict>
 			<key>expanded</key>
@@ -42,9 +44,7 @@
 			<key>filename</key>
 			<string>RubyCodeDriven.tex</string>
 			<key>lastUsed</key>
-			<date>2009-04-01T14:52:46Z</date>
-			<key>selected</key>
-			<true/>
+			<date>2009-04-02T15:01:41Z</date>
 		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
@@ -56,23 +56,121 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>1</integer>
+				<integer>179</integer>
 				<key>line</key>
-				<integer>352</integer>
+				<integer>452</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
-			<integer>151</integer>
+			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>324</integer>
+			<integer>427</integer>
 		</dict>
 		<key>code/arrays2.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>20</integer>
+				<integer>21</integer>
 				<key>line</key>
 				<integer>3</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>code/button.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>8</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>code/case1.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>2</integer>
+				<key>line</key>
+				<integer>1</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>code/jukebox.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>11</integer>
+				<key>line</key>
+				<integer>17</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>code/jukeboxbutton_bad.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>5</integer>
+				<key>line</key>
+				<integer>8</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>code/jukeboxbutton_good.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>33</integer>
+				<key>line</key>
+				<integer>13</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>code/ranges.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>6</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>code/song.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>23</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -82,12 +180,19 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
+		<string>code/button.rb</string>
+		<string>code/jukeboxbutton_bad.rb</string>
+		<string>code/jukeboxbutton_good.rb</string>
 		<string>RubyCodeDriven.tex</string>
+		<string>code/case1.rb</string>
+		<string>code/ranges.rb</string>
 		<string>code/arrays2.rb</string>
+		<string>code/jukebox.rb</string>
+		<string>code/song.rb</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{244, 179}, {1150, 798}}</string>
+	<string>{{311, 103}, {1042, 805}}</string>
 </dict>
 </plist>

@@ -381,13 +381,15 @@ Wenn nun die Callback-Methode \texttt{button\_pressed} aufgerufen wird, benutzen
 
 Das interessante hierbei ist, dass das \texttt{Proc}-Objekt nun mehr kann, als nur ein schnödes Stück Code. Zusätzlich zum Code des Blocks wird auch noch der Kontext gespeichert in dem der Block definiert wurde. Also der Wert von \texttt{self}, alle Konstanten, Variablen und Methoden die in genau diesem Kontext vorkamen. Der Block kann nun alle diese Information und Funktionalität verwenden.
 
-Dieser Kontext ist nun optimalerweise innerhalb der Jukebox (im Code nicht ausformuliert), dann können wir direkt die Methoden \texttt{Jukebox\#start} und \texttt{Jukebox\#stop} verwenden um auf den Callback zu reagieren.
+Dieser Kontext ist nun optimalerweise innerhalb der Jukebox (die Zeilen nach dem Kommetar), dann können wir direkt die Methoden \texttt{Jukebox\#start} und \texttt{Jukebox\#stop} verwenden um auf den Callback zu reagieren.
+
+Die Information, was passiert wen der Button gedrückt wird ist jetzt am richtigen Ort, nämlich in der Klasse \texttt{Jukebox}.
 % subsection blocks_als_closures_verwenden (end)
 
 
 
 
-
+\pagebreak
 \section{Default Argumente, Variable Anzahl von Argumenten}
 Ruby unterstützt auch auf einfache Weise Standardwerte für Argumente. Dabei wird der Wert einfach zusammen mit dem Namen des Arguments mitgeschrieben.
 
@@ -453,9 +455,25 @@ Die Keywords \texttt{if} und \texttt{unless} steuern den konditionalen Fluss ein
 Die beiden Keywords können auch einem einzelnen Statement nachgestellt werden.
 
 \lstinputlisting{code/control.rb}
+
+Ruby unterstützt auch den ternären Operator: \texttt{condition ? expr1 : expr2}
 % subsubsection if_unless (end)
 
-\subsubsection*{Iteration mit Zähler}
+
+\subsection*{Case} % (fold)
+\label{sub:case}
+\begin{quotation}
+	\swashed{»The Ruby \texttt{case} expression is a powerful beast: a multiway \texttt{if} on steroids.« — Programming Ruby, The Pragmatic Programmers Guide }
+\end{quotation}
+
+Nichts könnte wahrer sein als das. Da alles in Ruby einen Wert hat und damit auch mit anderen Werten verglichen werden kann, ist das \texttt{case}-Statement ein extrem mächtiges Werkzeug.
+
+\lstinputlisting{code/case1.rb}
+
+Am interessantesten sind hier die Zeilen 6 und 9. In Zeile 6 ist der Wert mit dem verglichen wird ein regulärer Ausdruck — mehr dazu im Abschnitt XXX — und in Zeile 9 sind es mehrere Werte, die auch alle einen verschiedenen Typ haben könnten.
+
+% subsection case (end)
+
 
 % section kontrollfluss (end)
 

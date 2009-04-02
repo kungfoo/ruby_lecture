@@ -11,5 +11,6 @@ class JukeboxButton < Button
   end
 end
 
+# in Klasse Jukebox hinzufügen...
 button_start = JukeboxButton.new("Start") { start }
 button_stop = JukeboxButton.new("Stop") { stop }
