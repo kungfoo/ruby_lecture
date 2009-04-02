@@ -1,9 +1,9 @@
-:name
-:other_name
-:"Ruby rocks!"
+:name # !> unused literal ignored
+:other_name # !> unused literal ignored
+:"Ruby rocks!" # !> unused literal ignored
 
-puts :name.class      # => Symbol
-puts :name.object_id  # => 34258
-puts :name.object_id  # => 34258
-puts "name".object_id # => 285010
-puts "name".object_id # => 284990
+:name.class      # => Symbol
+:name.object_id  # => 34258
+:name.object_id  # => 34258
+"name".object_id # => 78730
+"name".object_id # => 78540

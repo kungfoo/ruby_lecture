@@ -10,3 +10,8 @@ array = []
 
 threetimes { array << "meh."}
 puts array.inspect
+
+# >> Hello yield!
+# >> Hello yield!
+# >> Hello yield!
+# >> ["meh.", "meh.", "meh."]

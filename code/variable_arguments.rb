@@ -4,5 +4,5 @@ def sum(*c)
   return sum
 end
 
-puts sum(1,2)
-puts sum(1,2,3,4,5,6,7,8,9)
+sum(1,2) # => 3
+sum(1,2,3,4,5,6,7,8,9) # => 45

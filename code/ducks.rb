@@ -21,3 +21,6 @@ birds.each do |bird|
     puts bird.name << " is not a duck!"
   end
 end
+
+# >> Gustav is not a duck!
+# >> Donald: quack!

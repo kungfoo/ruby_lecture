@@ -18,3 +18,14 @@ end
 
 array = [2, 3, "Harmless String", Duck.new, Duck.new, Duck.new]
 array.each { |item| puts item }
+
+# >> 3
+# >> 9
+# >> 8
+# >> 
+# >> 2
+# >> 3
+# >> Harmless String
+# >> Duck, id: 1
+# >> Duck, id: 2
+# >> Duck, id: 3

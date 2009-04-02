@@ -192,21 +192,11 @@ Strings in Ruby kommen in verschiedenen Quote-Gewändern.
 Folgender Code illustiert das:
 \lstinputlisting{code/strings.rb}
 
-Diese Strings werden dann wie folgt ausgegeben (Code bis Zeile 8):
-\begin{lstlisting}
-Brief message to the user 
-On a new line!
-Single quotes too.\n Beware of the effect, though...
-This is a "special" string. 'Lots' of quotes.
-\end{lstlisting}
+Diese Strings werden dann wie angegeben ausgegeben (Code bis Zeile 8).
+
+In Strings können auch mit der speziellen Zeichenfolge \#\{[Variable]\} Werte von Variablen eingesetzt werden.
+
 % section strings (end)
-
-In Strings können auch mit der speziellen Zeichenfolge \#\{[Variable]\} Werte von Variablen eingesetzt werden. Das ergibt dann ab Zeile 8 folgenden Output:
-
-\begin{lstlisting}
-This article costs: 7.23 CHF
-\end{lstlisting}
-
 
 
 
@@ -298,14 +288,6 @@ Wenn der Code innerhalb des Blockes mehr als ein Statement enthält, so können 
 Eine Methode wie zum Beispiel \texttt{Array::each} zu schreiben ist in Ruby ganz einfach. Das Keyword \texttt{yield} macht es möglich:
 
 \lstinputlisting{code/yield1.rb}
-
-Output:
-\begin{lstlisting}
-Hello yield!
-Hello yield!
-Hello yield!
-["meh.", "meh.", "meh."]
-\end{lstlisting}
 % subsection methode_die_einen_block_erhält (end)
 
 \subsection*{Parameter für Blöcke} % (fold)
@@ -318,19 +300,18 @@ Der Code der innerhalb des Blocks ausgeführt wird hat — wie jedes Statement i
 Kombiniert man die zwei Konzepte Parameter für Blöcke und den Rückgabewert des Codes, der im Block ausgeführt wird, so erhält man ein mächtiges Konzept, das sich am besten durch etwas Code erschliesst:
 
 \lstinputlisting{code/sort.rb}
-
-Output:
-\begin{lstlisting}
-[1, 2, 3, 3, 4, 5, 5, 7, 8, 9, 32, 63]
-[63, 32, 9, 8, 7, 5, 5, 4, 3, 3, 2, 1]
-\end{lstlisting}
 % subsection parameter_für_blöcke (end)
 
 Wie schön ist das um ein Array von Objekten umgekehrt zu sortieren?
 
 Der Code innerhalb des Blockes erhält die zwei Parameter a und b. Der Block wird dann beim Sortieren des Arrays dazu verwendet, die Ordnungsrelation der Elemente zu bestimmen. Der \emph{Spaceship-Operator} <=> ist dabei analog definiert, wie zum Beispiel in Java die Methode \texttt{compareTo()}.
 
+\subsection{Einen Parameter in einem Block übernehmen} % (fold)
+\label{sub:subsection_name}
+Wenn man eine Funktion selber schreibt, die für einen Block Parameter zurückgibt, so sieht das \texttt{yield}-Statement anders aus. Damit kann man zum Beispiel ganz einfach einen Block für alle Fibonacci-Zahlen bis zu einer bestimmten Grenze ausführen:
 
+\lstinputlisting{code/fibonacci.rb}
+% subsection subsection_name (end)
 
 
 
@@ -341,26 +322,12 @@ Ruby unterstützt auch auf einfache Weise Standardwerte für Argumente. Dabei wi
 
 \lstinputlisting{code/arguments.rb}
 
-Output:
-\begin{lstlisting}
-Hello! Hello! Hello! 
-12
-Goodbye! Goodbye! Goodbye! Goodbye! Goodbye! 
-\end{lstlisting}
-
 Auffallend ist hierbei, dass die Argumente von vorne nach hinten ihre default-Werte erhalten. Wird also nur 4 als Wert angegeben, so gibt die Methode das Resultat von 4*3 = 12 aus.
 
 
 Eine variable Anzahl Argumente kann in Ruby erreicht werden indem der Name des Arguments mit einem Splat versehen wird. Logischerweise kann nur das letzte Argument einen Splat tragen, denn wie sollte Ruby sonst wissen, wo die variable Anzahl Argumente anfängt und wo sie aufhört.
 
 \lstinputlisting{code/variable_arguments.rb}
-
-Output:
-
-\begin{lstlisting}
-3
-45
-\end{lstlisting}
 
 
 
@@ -373,12 +340,6 @@ Output:
 Gleich ein Beispiel einer Klasse in Ruby:
 
 \lstinputlisting{code/song.rb}
-
-Output:
-\begin{lstlisting}
-'bloody mary' is about 3 minutes long!
-'bloody mary' is now about 8 minutes long!
-\end{lstlisting}
 
 Dieses Beispiel zeigt gleich einige Aspekte auf, wie in Ruby eine Klasse geschrieben wird:
 
@@ -421,32 +382,11 @@ Dabei kann der Index auch negativ werden. Es wird dann von hinten abgezählt, wo
 
 \lstinputlisting{code/arrays1.rb}
 
-Output:
-\begin{lstlisting}
-3
-9
-8
 
-2
-3
-Harmless String
-Duck, id: 1
-Duck, id: 2
-Duck, id: 3
-\end{lstlisting}
 
 Weiter können dem Indexoperator auch Ranges angegeben werden. Die Notation ist dabei die gleiche wie bereits gesehen:
 
 \lstinputlisting{code/arrays2.rb}
-
-Output:
-\begin{lstlisting}
-2,3,4,5
-6
-7
-8
-9
-\end{lstlisting}
 
 
 Weitere Tricks und Kniffe mit Arrays, Strings und Hashes findest du im Kapitel XXX wo einige Methoden dieser Klassen kurz erklärt werden.
