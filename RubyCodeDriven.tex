@@ -381,7 +381,9 @@ Wenn nun die Callback-Methode \texttt{button\_pressed} aufgerufen wird, benutzen
 
 Das interessante hierbei ist, dass das \texttt{Proc}-Objekt nun mehr kann, als nur ein schnödes Stück Code. Zusätzlich zum Code des Blocks wird auch noch der Kontext gespeichert in dem der Block definiert wurde. Also der Wert von \texttt{self}, alle Konstanten, Variablen und Methoden die in genau diesem Kontext vorkamen. Der Block kann nun alle diese Information und Funktionalität verwenden.
 
-Dieser Kontext ist nun optimalerweise innerhalb der Jukebox (die Zeilen nach dem Kommetar), dann können wir direkt die Methoden \texttt{Jukebox\#start} und \texttt{Jukebox\#stop} verwenden um auf den Callback zu reagieren.
+Damit sieht die Klasse \texttt{Jukebox} neu so aus:
+
+\lstinputlisting{code/jukebox2.rb}
 
 Die Information, was passiert wen der Button gedrückt wird ist jetzt am richtigen Ort, nämlich in der Klasse \texttt{Jukebox}.
 % subsection blocks_als_closures_verwenden (end)
