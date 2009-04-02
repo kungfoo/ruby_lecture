@@ -268,72 +268,6 @@ Diese Notation wird dann wichtig, wenn Methode der Ruby-Library verwendet werden
 
 
 
-\section{Blocks und Closures} % (fold)
-\label{sec:blocks_und_closures}
-Blöcke sind ein essentieller Teil der Sprache Ruby. Code in geschweiften Klammern ist ein Block. Allerdings ist ein Block mehr als nur Code der gruppiert ist.
-
-Ein Block wird in Ruby eigentlich immer zusammen mit einer Methode verwendet. Damit kann man zum Beispiel Funktionen die über alle Elemente einer Collection iterieren Code mitgeben, der dann für jedes Element ausgeführt wird — so wird der Code innerhalb des Blocks zum \emph{Visitor}.
-
-Das sieht dann zum Beispiel so aus:
-
-\lstinputlisting{code/blocks1.rb}
-% section blocks_und_closures (end)
-
-Wenn der Code innerhalb des Blockes mehr als ein Statement enthält, so können die '\{\}' durch \texttt{do/end} ersetzt werden:
-
-\lstinputlisting{code/blocks2.rb}
-
-\subsection*{Methode die einen Block erhält} % (fold)
-\label{sub:methode_die_einen_block_erhält}
-Eine Methode wie zum Beispiel \texttt{Array::each} zu schreiben ist in Ruby ganz einfach. Das Keyword \texttt{yield} macht es möglich:
-
-\lstinputlisting{code/yield1.rb}
-% subsection methode_die_einen_block_erhält (end)
-
-\subsection*{Parameter für Blöcke} % (fold)
-\label{sub:parameter_für_blöcke}
-Blöcke können auch Parameter erhalten. Diese werden zwischen zwei Pipes geschrieben.
-
-
-Der Code der innerhalb des Blocks ausgeführt wird hat — wie jedes Statement in Ruby — einen Wert. Damit kann der Funktion durch einen Block auch ein Wert zurückgegeben werden.
-
-Kombiniert man die zwei Konzepte Parameter für Blöcke und den Rückgabewert des Codes, der im Block ausgeführt wird, so erhält man ein mächtiges Konzept, das sich am besten durch etwas Code erschliesst:
-
-\lstinputlisting{code/sort.rb}
-% subsection parameter_für_blöcke (end)
-
-Wie schön ist das um ein Array von Objekten umgekehrt zu sortieren?
-
-Der Code innerhalb des Blockes erhält die zwei Parameter a und b. Der Block wird dann beim Sortieren des Arrays dazu verwendet, die Ordnungsrelation der Elemente zu bestimmen. Der \emph{Spaceship-Operator} <=> ist dabei analog definiert, wie zum Beispiel in Java die Methode \texttt{compareTo()}.
-
-\subsection{Einen Parameter in einem Block übernehmen} % (fold)
-\label{sub:subsection_name}
-Wenn man eine Funktion selber schreibt, die für einen Block Parameter zurückgibt, so sieht das \texttt{yield}-Statement anders aus. Damit kann man zum Beispiel ganz einfach einen Block für alle Fibonacci-Zahlen bis zu einer bestimmten Grenze ausführen:
-
-\lstinputlisting{code/fibonacci.rb}
-% subsection subsection_name (end)
-
-
-
-
-
-\section{Default Argumente, Variable Anzahl von Argumenten}
-Ruby unterstützt auch auf einfache Weise Standardwerte für Argumente. Dabei wird der Wert einfach zusammen mit dem Namen des Arguments mitgeschrieben.
-
-\lstinputlisting{code/arguments.rb}
-
-Auffallend ist hierbei, dass die Argumente von vorne nach hinten ihre default-Werte erhalten. Wird also nur 4 als Wert angegeben, so gibt die Methode das Resultat von 4*3 = 12 aus.
-
-
-Eine variable Anzahl Argumente kann in Ruby erreicht werden indem der Name des Arguments mit einem Splat versehen wird. Logischerweise kann nur das letzte Argument einen Splat tragen, denn wie sollte Ruby sonst wissen, wo die variable Anzahl Argumente anfängt und wo sie aufhört.
-
-\lstinputlisting{code/variable_arguments.rb}
-
-
-
-
-
-
 
 \section{Klassen, Attribute} % (fold)
 \label{sec:klassen_methoden_attribute}
@@ -359,6 +293,112 @@ Dies sollte man aber nicht tun — auch wenn man kann:
 
 \lstinputlisting{code/plusminus.rb}
 % section klassen_methoden_attribute (end)
+
+
+
+
+
+
+\section{Blocks und Closures} % (fold)
+\label{sec:blocks_und_closures}
+Blöcke sind ein essentieller Teil der Sprache Ruby. Code in geschweiften Klammern ist ein Block. Allerdings ist ein Block mehr als nur Code der gruppiert ist.
+
+Ein Block wird in Ruby eigentlich immer zusammen mit einer Methode verwendet. Damit kann man zum Beispiel Funktionen die über alle Elemente einer Collection iterieren Code mitgeben, der dann für jedes Element ausgeführt wird — so wird der Code innerhalb des Blocks zum \emph{Visitor}.
+
+Das sieht dann zum Beispiel so aus:
+
+\lstinputlisting{code/blocks1.rb}
+% section blocks_und_closures (end)
+
+Wenn der Code innerhalb des Blockes mehr als ein Statement enthält, so können die '\{\}' durch \texttt{do/end} ersetzt werden:
+
+\lstinputlisting{code/blocks2.rb}
+
+\subsection*{Methode die einen Block erhält} % (fold)
+\label{sub:methode_die_einen_block_erhält}
+Eine Methode wie zum Beispiel \texttt{Array\#each} zu schreiben ist in Ruby ganz einfach. Das Keyword \texttt{yield} macht es möglich:
+
+\lstinputlisting{code/yield1.rb}
+% subsection methode_die_einen_block_erhält (end)
+
+\subsection*{Parameter für Blöcke} % (fold)
+\label{sub:parameter_für_blöcke}
+Blöcke können auch Parameter erhalten. Diese werden zwischen zwei Pipes geschrieben.
+
+
+Der Code der innerhalb des Blocks ausgeführt wird hat — wie jedes Statement in Ruby — einen Wert. Damit kann der Funktion durch einen Block auch ein Wert zurückgegeben werden.
+
+Kombiniert man die zwei Konzepte Parameter für Blöcke und den Rückgabewert des Codes, der im Block ausgeführt wird, so erhält man ein mächtiges Konzept, das sich am besten durch etwas Code erschliesst:
+
+\lstinputlisting{code/sort.rb}
+% subsection parameter_für_blöcke (end)
+
+Wie schön ist das um ein Array von Objekten umgekehrt zu sortieren?
+
+Der Code innerhalb des Blockes erhält die zwei Parameter a und b. Der Block wird dann beim Sortieren des Arrays dazu verwendet, die Ordnungsrelation der Elemente zu bestimmen. Der \emph{Spaceship-Operator} <=> ist dabei analog definiert, wie zum Beispiel in Java die Methode \texttt{compareTo()}.
+
+\subsection*{Einen Parameter in einem Block übernehmen} % (fold)
+\label{sub:subsection_name}
+Wenn man eine Funktion selber schreibt, die für einen Block Parameter zurückgibt, so sieht das \texttt{yield}-Statement anders aus. Damit kann man zum Beispiel ganz einfach einen Block für alle Fibonacci-Zahlen bis zu einer bestimmten Grenze ausführen:
+
+\lstinputlisting{code/fibonacci.rb}
+% subsection subsection_name (end)
+
+
+\subsection*{Blocks als Closures verwenden} % (fold)
+\label{sub:blocks_als_closures_verwenden}
+Bevor wir zu Blöcken als Closures kommen, schreiben wir  zu Auflockerung mal eine Jukebox — die Klasse \texttt{Song} ist dabei die gleiche die bereits in Abschnitt \ref{sec:klassen_methoden_attribute} abgedruckt ist.
+
+\lstinputlisting{code/jukebox.rb}
+
+In diesem Code sehen wir ein paar interessante Dinge, die kurz erwähnt sein wollen:
+
+\begin{itemize}
+	\item \texttt{require} bindet ein benötigtes Ruby-File ein.
+	\item Den Operator \texttt{<<} — einen Song hinzufügen — können wir ganz einfach überschreiben, er ist nämlich eine Methode.
+	\item Die Methode \texttt{each\_song} ist ein sinnvolleres Beispiel für die Verwendung eines Blockes um einen Iterator zu schreiben.
+\end{itemize}
+
+Wir möchten nun Buttons zu der Jukebox hinzufügen. Wir brauchen einen Start-Button und einen Stop-Button. Sehen wir uns einmal den Start-Button an:
+
+\lstinputlisting{code/button.rb}
+
+\lstinputlisting{code/jukeboxbutton_bad.rb}
+
+Dieser Startbutton sieht eigentlich nicht so schlecht aus. Das Ganze erinnert ein wenig an das Konzept der Eventhandler in Java. Leider hat diese Art Eventhandler zu schreiben zwei grosse Nachteile:
+\begin{enumerate}
+	\item Diese Art von Code führt zu einer grossen Anzahl Subklassen. Jeder neue Button braucht wieder eine eigene Klasse.
+	\item Die Aktion die ausgeführt wird wenn ein Knopf gedrückt wird, ist am falschen Ort. Die Aktionen sind nicht ein Feature der Buttons sondern der Jukebox, welche die Buttons verwendet. Man sieht das auch daran, dass \texttt{StartButton} eine Referenz auf die Jukebox braucht, obwohl def Button gar nicht wissen \emph{sollte} was für eine Aktion er ausführt.
+\end{enumerate}
+
+Wie können beide dieser Probleme kurz und einfach lösen, indem wir einen Block als Closure verwenden:
+
+\lstinputlisting{code/jukeboxbutton_good.rb}
+
+Das '\&' vor dem Parameter \texttt{action} führt dazu, dass der Block den wir der Funktion übergeben in ein Objekt des Typs \texttt{Proc} konvertiert wird. Danach können wir den Parameter so wie jeden anderen behandeln.
+
+Wenn nun die Callback-Methode \texttt{button\_pressed} aufgerufen wird, benutzen wir die Methode \texttt{Proc\#call()} um den Code innerhalb der Closure auszuführen.
+
+Das interessante hierbei ist, dass das \texttt{Proc}-Objekt nun mehr kann, als nur ein schnödes Stück Code. Zusätzlich zum Code des Blocks wird auch noch der Kontext gespeichert in dem der Block definiert wurde. Also der Wert von \texttt{self}, alle Konstanten, Variablen und Methoden die in genau diesem Kontext vorkamen. Der Block kann nun alle diese Information und Funktionalität verwenden.
+
+Dieser Kontext ist nun optimalerweise innerhalb der Jukebox (im Code nicht ausformuliert), dann können wir direkt die Methoden \texttt{Jukebox\#start} und \texttt{Jukebox\#stop} verwenden um auf den Callback zu reagieren.
+% subsection blocks_als_closures_verwenden (end)
+
+
+
+
+
+\section{Default Argumente, Variable Anzahl von Argumenten}
+Ruby unterstützt auch auf einfache Weise Standardwerte für Argumente. Dabei wird der Wert einfach zusammen mit dem Namen des Arguments mitgeschrieben.
+
+\lstinputlisting{code/arguments.rb}
+
+Auffallend ist hierbei, dass die Argumente von vorne nach hinten ihre default-Werte erhalten. Wird also nur 4 als Wert angegeben, so gibt die Methode das Resultat von 4*3 = 12 aus.
+
+
+Eine variable Anzahl Argumente kann in Ruby erreicht werden indem der Name des Arguments mit einem Splat versehen wird. Logischerweise kann nur das letzte Argument einen Splat tragen, denn wie sollte Ruby sonst wissen, wo die variable Anzahl Argumente anfängt und wo sie aufhört.
+
+\lstinputlisting{code/variable_arguments.rb}
 
 
 
