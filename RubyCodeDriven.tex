@@ -433,7 +433,7 @@ Weiter können dem Indexoperator auch Ranges angegeben werden. Die Notation ist 
 \lstinputlisting{code/arrays2.rb}
 
 
-Weitere Tricks und Kniffe mit Arrays, Strings und Hashes findest du im Kapitel XXX wo einige Methoden dieser Klassen kurz erklärt werden.
+Weitere Tricks und Kniffe mit Arrays, Strings und Hashes findest du im Kapitel \ref{cha:ruby_types} wo einige Methoden dieser Klassen kurz erklärt werden.
 % section arrays (end)
 
 
@@ -474,14 +474,53 @@ Nichts könnte wahrer sein als das. Da alles in Ruby einen Wert hat und damit au
 
 Am interessantesten sind hier die Zeilen 6 und 9. In Zeile 6 ist der Wert mit dem verglichen wird ein regulärer Ausdruck — mehr dazu im Abschnitt XXX — und in Zeile 9 sind es mehrere Werte, die auch alle einen verschiedenen Typ haben könnten.
 
+
+Da in Ruby jedes Statement einen Wert hat, kann auch \texttt{case} einen Wert zurückgeben. Und zwar jeweils den letzten Wert, der definiert wird. Hier ein Stück Code aus einem Ruby Programm das Maya-Zahlen in Textform ins Dezimalsystem konvertiert:
+
+\lstinputlisting{code/maya.rb}
 % subsection case (end)
 
 
+
+\subsection*{Loops} % (fold)
+\label{sub:loops}
+Auch wenn sie eher selten gebraucht werden — Ruby hat extrem schöne Iteratoren für die meisten Klassen, bei denen es etwas zu iterieren gibt — so enthält Ruby auch auch Konstrukte für Loops.
+
+\subsubsection*{while} % (fold)
+\label{ssub:while}
+\lstinputlisting{code/while.rb}
+% subsubsection while (end)
+
+\subsubsection{until} % (fold)
+\label{ssub:until}
+Until läuft im Gegensatz zu \texttt{while} so lange, bis eine Bedingung zutrifft.
+% subsubsection until (end)
+\lstinputlisting{code/until.rb}
+
+% subsection loops (end)
 % section kontrollfluss (end)
 
 
 
 
+
+
+
+
+
+
+
+
+\chapter{Ruby Types} % (fold)
+\label{cha:ruby_types}
+
+
+
+
+
+
+
+% chapter ruby_types (end)
 
 
 
