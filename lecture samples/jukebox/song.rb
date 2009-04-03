@@ -18,4 +18,9 @@ class Song
   def to_s
     %("#{@title}" by #{@artist}, #{minutes}min #{seconds}s)
   end
+  
+  def matches(string)
+    regex = Regexp.new(string, "i")
+    return (@artist =~ regex or @title =~ regex)
+  end
 end

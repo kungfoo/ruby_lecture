@@ -2,11 +2,13 @@ require "yaml"
 require "song.rb"
 
 class Collection
-  Collection_File = "collection.yml"
+  COLLECTION_FILE = "collection.yml"
+  
+  attr_reader :songlist
   
   def initialize
     @songlist = []
-    songs = YAML.load_file(Collection_File)
+    songs = YAML.load_file(COLLECTION_FILE)
     songs.each { |hash| @songlist << Song.new(hash) }
   end
   

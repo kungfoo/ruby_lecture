@@ -8,7 +8,7 @@ end
 
 class Duck < Bird
   def quack()
-    puts self.name + ": quack!"
+    puts @name + ": quack!"
   end
 end
 

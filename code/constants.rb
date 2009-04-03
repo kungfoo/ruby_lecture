@@ -1,6 +1,6 @@
-File_Location = "/dev/mouse0"
-File_Location = "/dev/keyboard0"
+FILE_LOCATION = "/dev/mouse0"
+FILE_LOCATION = "/dev/keyboard0"
 
-puts File_Location
+puts FILE_LOCATION
 
 # >> /dev/keyboard0

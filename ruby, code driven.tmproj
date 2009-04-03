@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>code/jukebox.rb</string>
+	<string>RubyCodeDriven.tex</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -40,7 +40,9 @@
 			<key>filename</key>
 			<string>RubyCodeDriven.tex</string>
 			<key>lastUsed</key>
-			<date>2009-04-03T08:40:12Z</date>
+			<date>2009-04-03T13:56:06Z</date>
+			<key>selected</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>expanded</key>
@@ -64,63 +66,21 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>515</integer>
+				<integer>423</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>443</integer>
+			<integer>404</integer>
 		</dict>
-		<key>code/arguments.rb</key>
+		<key>lecture samples/jukebox/jukebox.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>13</integer>
 				<key>line</key>
-				<integer>11</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>code/jukebox.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>25</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>code/until.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>17</integer>
-				<key>line</key>
-				<integer>4</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>code/while.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>17</integer>
-				<key>line</key>
-				<integer>5</integer>
+				<integer>2</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -130,11 +90,8 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
+		<string>lecture samples/jukebox/jukebox.rb</string>
 		<string>RubyCodeDriven.tex</string>
-		<string>code/arguments.rb</string>
-		<string>code/until.rb</string>
-		<string>code/while.rb</string>
-		<string>code/jukebox.rb</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
