@@ -10,9 +10,7 @@ class Collection
     songs.each { |hash| @songlist << Song.new(hash) }
   end
   
-  
   def print_song_list
     @songlist.each{ |song| puts song }
   end
-  
 end
