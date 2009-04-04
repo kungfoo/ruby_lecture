@@ -31,6 +31,7 @@ j << Song.new("Bulls on Parade", 320)
 
 j.each_song { |song| puts song.name }
 
+
 # >> Bloody Mary
 # >> Hells Bells
 # >> Bulls on Parade
