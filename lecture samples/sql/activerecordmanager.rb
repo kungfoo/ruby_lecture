@@ -1,4 +1,5 @@
 require "singleton"
+require "sqlite"
 
 class ActiveRecordManager
   include Singleton
