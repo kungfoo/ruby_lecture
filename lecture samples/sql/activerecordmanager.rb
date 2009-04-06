@@ -1,5 +1,5 @@
 require "singleton"
-require "sqlite"
+require "sqlite3"
 
 class ActiveRecordManager
   include Singleton
@@ -14,6 +14,7 @@ class ActiveRecordManager
   
   private
   def establish_database_connection
-    
+    @db = SQLite3::Database.new("db/people.db")
   end
 end
+
