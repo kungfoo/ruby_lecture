@@ -19,7 +19,7 @@ class Song
     %("#{@title}" by #{@artist}, #{minutes}min #{seconds}s)
   end
   
-  def matches(string)
+  def contains?(string)
     regex = Regexp.new(string, "i")
     return (@artist =~ regex or @title =~ regex)
   end

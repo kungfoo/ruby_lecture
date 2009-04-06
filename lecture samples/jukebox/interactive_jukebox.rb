@@ -1,10 +1,8 @@
 require "jukebox.rb"
-
 require "readline"
 
 jukebox = Jukebox.new
 jukebox_methods = (jukebox.methods - Object.new.methods).sort
-
 
 loop do
   cmd = Readline.readline("jukebox >> ", true)
