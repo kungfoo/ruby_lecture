@@ -1,23 +1,36 @@
 class Song
   @@seconds_per_minute = 60
   
-  attr_accessor :name, :length
+  attr_accessor :name, :seconds
   
-  def initialize(name, length)
+  def initialize(name, seconds)
     @name = name
-    @length = length
+    @seconds = seconds
   end
   
-  def length_in_minutes()
-    @length / @@seconds_per_minute
+  def minutes
+    @seconds / @@seconds_per_minute
+  end
+  
+  def minutes=(mins)
+    @seconds = mins * 60
+  end
+  
+  def to_s
+    "'#{name}', about #{minutes} minutes long"
   end
 end
 
 # using this class:
 s = Song.new("bloody mary", 200)
-puts "'#{s.name}' is about #{s.length_in_minutes} minutes long!"
-s.length = 500
-puts "'#{s.name}' is now about #{s.length_in_minutes} minutes long!"
+puts s
 
-# >> 'bloody mary' is about 3 minutes long!
-# >> 'bloody mary' is now about 8 minutes long!
+s.seconds = 500
+puts s
+
+s.minutes = 4.2
+puts s
+
+# >> 'bloody mary', about 3 minutes long
+# >> 'bloody mary', about 8 minutes long
+# >> 'bloody mary', about 4.2 minutes long
