@@ -1,0 +1,5 @@
+one = 1
+twenty_three = +23
+long_number = -182739273987138721986287361287631726716362173
+floating_point = 1.4234252222
+scientific = 1.23e-10

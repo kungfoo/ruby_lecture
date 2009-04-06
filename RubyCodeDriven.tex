@@ -49,7 +49,7 @@
 \pagenumbering{arabic}
 \section{Was macht Ruby so speziell?} % (fold)
 \label{sec:was_macht_ruby_so_speziell_}
-Ruby ist eine spezielle Programmiersprache. Speziell für Programmierer, die sich statisch typisierte Sprachen wie Java, C\# und C++ gewöhnt sind. Folgende Punkte machen Ruby so speziell:
+Ruby ist eine spezielle Programmiersprache. Speziell für Programmierer, die sich statisch typisierte Sprachen wie Java, C\# und C++ gewöhnt sind. Folgende Punkte zeichnen Ruby aus:
 
 \subsection*{Ruby ist einfach zu lesen} % (fold)
 \label{sub:ruby_ist_einfach_zu_lesen}
@@ -120,7 +120,7 @@ Dies ist nur ein ganz kleiner Ausschnitt, noch viel mehr macht Ruby zu einer spe
 
 
 
-\section{Woher kommt Ruby und was ist das Ziel} % (fold)
+\section{Woher kommt Ruby und was ist das Ziel (Buzzword Bingo)} % (fold)
 \label{sec:woher_kommt_ruby_und_was_ist_das_ziel}
 Ruby wurde von Yukihiro »Matz« Matsumoto in Japan im Jahre 1995 zum ersten Mal released. Weltweit erreichte die Sprache danach den Ruf einer einfach zu erlernenden, mächtigen und expressiven Sprache.
 Die Intention war damals ein »Perl, better than Perl« als Sprache zu entwerfen.
@@ -172,7 +172,9 @@ Gültige Beispiele wären:
 \label{sec:zahlen}
 Die einfachsten Zahlen sind Ganzzahlen (\texttt{Integer}). Diese bestehen in Ruby aus einer beliebig langen Folge — richtig gelesen, Ruby hat automatischen Support für grosse Zahlen mit hunderten von Stellen — von Ziffern mit vorgestelltem Minus- oder Pluszeichen.
 
-\lstinputlisting{code/integers.rb}
+Fliesskommazahlen werden mit einem Dezimalpunkt geschrieben. Auch die wissenschaftliche Notation wird unterstützt.
+
+\lstinputlisting{code/numbers.rb}
 % section zahlen (end)
 
 
@@ -441,10 +443,15 @@ Weitere Tricks und Kniffe mit Arrays, Strings und Hashes findest du im Kapitel \
 % section arrays (end)
 
 
+\section{Hashes} % (fold)
+\label{sub:hashes}
+Hashes sind Arrays ähnlich werden aber mittels einem Objekt indexiert. Damit kann man ganz einfach Assoziationen zwischen Objekten herstellen.
 
+Irgendein Objekt — also alles in Ruby, auch ein Statement — kann in einem Hash als Key und auch als Value verwendet werden.
 
+\lstinputlisting{code/hash.rb}
 
-
+% section hashes (end)
 
 
 
@@ -512,11 +519,16 @@ Until läuft im Gegensatz zu \texttt{while} so lange, bis eine Bedingung zutriff
 
 \chapter{Ruby Types} % (fold)
 \label{cha:ruby_types}
-In diesem Kapitel werde ich einige der grundlegendsten Klassen aus Ruby Core und auch aus der Ruby Standard-Library kurz vorstellen und ein Subset der Funktionen aufzeigen. Falls mehr Informationen zur gesamten API gewünscht sind, findet man sie hier: \url{http://www.ruby-doc.org/}. 
+In diesem Kapitel werden einige der grundlegendsten Klassen aus Ruby-Core und auch aus der Ruby Standard-Library kurz vorgestellt und ein Subset der Funktionen aufgezeigt. Viele der Klassen haben zu viele Funktionen um sie hier alle ausführlich zu erwähnen.
+
+Falls mehr Informationen zur gesamten API gewünscht sind, findet man sie hier: \url{http://www.ruby-doc.org/}.
+
+\section{String} % (fold)
+\label{sec:string}
 
 
 
-
+% section string (end)
 
 
 % chapter ruby_types (end)
