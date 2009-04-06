@@ -514,14 +514,9 @@ Until läuft im Gegensatz zu \texttt{while} so lange, bis eine Bedingung zutriff
 
 
 
-
-
-
-
-
 \chapter{Ruby Types} % (fold)
 \label{cha:ruby_types}
-
+In diesem Kapitel werde ich einige der grundlegendsten Klassen aus Ruby Core und auch aus der Ruby Standard-Library kurz vorstellen und ein Subset der Funktionen aufzeigen. Falls mehr Informationen zur gesamten API gewünscht sind, findet man sie hier: \url{http://www.ruby-doc.org/}. 
 
 
 
@@ -537,7 +532,26 @@ Until läuft im Gegensatz zu \texttt{while} so lange, bis eine Bedingung zutriff
 
 
 
+\chapter{Code Snippets zur Vorlesung}
 
+\section{Jukebox}
+\subsection*{Idee}
+Die Jukebox-Klassen liefern einen kleinen Einblick in das Schreiben von Klassen in Ruby. Besonderes Merkmal ist das File \texttt{interactive\_jukebox.rb} welches eine Instanz der Klasse \texttt{Jukebox	} anlegt und danach dem Benutzer einen Promt zeigt, auf dem er Befehle an die Instanz absetzen kann.
+
+Folgende weitere Befehle sind implementiert:
+
+\begin{itemize}
+\item "? oder help": Zeigt dem Benutzer alle auf der aktuellen Jukebox-Instanz definierten Methoden an.
+\item "q, quit oder exit": Beendet die interaktive Shell.
+\end{itemize}
+
+
+\subsection*{Weitere Klassen}
+
+\begin{itemize}
+\item \texttt{song.rb}: Ein einzelner Song, speichert Titel, Name des Künstlers und Länge des Songs ab.
+\item \texttt{collection.rb}: Übernimmt das Laden der Songs. In dieser einfachen Version werden die Songs aus einem YAML-File geladen. 
+\end{itemize}
 
 
 
