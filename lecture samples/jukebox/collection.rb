@@ -4,7 +4,7 @@ require "song.rb"
 class Collection
   COLLECTION_FILE = "collection.yml"
   
-  attr_reader :songlist
+  attr_accessor :songlist
   
   def initialize
     @songlist = []
@@ -12,7 +12,17 @@ class Collection
     songs.each { |hash| @songlist << Song.new(hash) }
   end
   
-  def print_songlist
-    @songlist.each{ |song| puts song }
+  def pretty_print
+    each_song{ |song| puts song }
+  end
+  
+  def filter(string)
+    result = Collection.new
+    result.songlist = @songlist.select{ |song| song.contains?(string) } 
+    return result
+  end
+  
+  def each_song
+    @songlist.each{ |s| yield s }
   end
 end

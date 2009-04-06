@@ -7,18 +7,18 @@ class Jukebox
   end
   
   def print_songlist
-    puts "Songs currently loaded:"
+    puts "songs loaded:"
     puts @line
-    @collection.print_songlist
+    @collection.pretty_print
     puts @line
   end
   
   def search(string)
-    @collection.songlist.find_all { |song| song.contains?(string)}
+    @collection.filter(string)
   end
   
-  def play(songs)
-    songs.each { |song| puts "playing song: #{song}........." }
+  def play(collection)
+    collection.each_song { |song| puts "playing song: #{song}........." }
     nil
   end
 end
@@ -29,7 +29,8 @@ jb = Jukebox.new
 jb.print_songlist
 
 puts "searching for: 'prim'"
-puts jb.search("prim")
+puts jb.search("prim").pretty_print
 
 puts "playing all songs containing 'mus'"
 jb.play(jb.search("mus"))
+

@@ -1,4 +1,4 @@
-def fibUpTo(max)
+def fib_up_to(max)
   a, b = 1, 1
   while a <= max
     yield a
@@ -6,6 +6,6 @@ def fibUpTo(max)
   end
 end
 
-fibUpTo(1000) { |f| print f, " "}
+fib_up_to(1000) { |f| print f, " "}
 
 # >> 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 
