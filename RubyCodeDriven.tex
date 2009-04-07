@@ -516,10 +516,82 @@ Until läuft im Gegensatz zu \texttt{while} so lange, bis eine Bedingung zutriff
 
 \section{Regular Expressions} % (fold)
 \label{sec:regular_expressions}
-Ruby verfügt über eine der effizientesten Implementationen einer Regex-Maschine und da regüläre Ausdrücke direkt als Typ in der Sprache eingebaut sind, tauchen sie hier auch im Kapitel »Syntax« auf.
+Ruby verfügt über eine sehr effiziente Regex-Maschine und da reguläre Ausdrücke direkt als Typ in der Sprache eingebaut sind, tauchen sie hier auch im Kapitel »Syntax« auf.
+
+Reguläre Ausdrücke werden entweder zwischen /r/ oder mit dem Shorthandle \%r\{r\} geschrieben.
+
+\lstinputlisting{code/regex.rb}
+
+Die Objekte unterstützen danach den Match mit dem Operator =~ (positiver Match) oder mit !~ (negativer Match).
+
+Nachdem so ein Match versucht wurde, so sind folgende Variablen definiert:
+
+\begin{itemize}
+	\item \texttt{\$\&} — der Teil des String der gematcht wurde.
+	\item \texttt{\$`} — der Teil vor dem Match.
+	\item \texttt{\$'} — der Teil nachher.
+	\item Oder schöner und OO — \texttt{Regexp\#last\_match}
+	\begin{itemize}
+		\item \texttt{pre\_match}
+		\item \texttt{post\_match}
+		\item mehr unter \url{http://www.ruby-doc.org/core/classes/MatchData.html}
+	\end{itemize}
+\end{itemize}
+
+\lstinputlisting{code/display_regmatch.rb}
+
+\subsection*{Anchors} % (fold)
+\label{ssub:anchors}
+Folgende Anchors sind definiert:
+
+\begin{itemize}
+	\item \lstinline{/^r/}  — r matcht am Anfang des Textes.
+	\item \texttt{/r\$/} — r matcht am Ende.
+	\item \lstinline{\A}  — Anfang.
+	\item \lstinline{\Z}  — Ende
+	\item \lstinline{\b} — Matcht ein Wort, getrennt von Whitespace.
+	\item \lstinline{\B} — Innerhalb eines Wortes.
+\end{itemize}
+
+% subsubsection anchors (end)
 
 
 
+\subsection*{Character-Klassen} % (fold)
+\label{sub:character_klassen}
+Folgende Character-Klassen sind definiert:
+
+\begin{itemize}
+	\item \lstinline{\d = [0-9]} — Eine Ziffer
+	\item \lstinline{\D = [^0-9]} — Keine Ziffer
+	\item \lstinline{\s = [\s\t\r\n\f]} — Whitespace
+	\item \lstinline{\S = [^\s\t\r\n\f]} — kein Whitespace
+	\item \lstinline{\w = [A-Za-z0-9_]} — Word-Character
+	\item \lstinline{\W} — Kein Word-Character
+\end{itemize}
+% subsection character_klassen (end)
+
+\subsection*{Repetition} % (fold)
+\label{sub:repetition}
+\begin{itemize}
+	\item \texttt{r*} — null oder mehr \texttt{r}
+	\item \texttt{r+} — ein oder mehr \texttt{r} 
+	\item \texttt{r?} — null oder ein \texttt{r} 
+	\item \texttt{r\{m,n\}} — mindestens \texttt{m}, maximal \texttt{n} \texttt{r}s
+	\item \texttt{r\{m,\}} — mindestens \texttt{m} \texttt{r}s
+	\item \texttt{r\{m\}} — genau \texttt{m} \texttt{r}s
+\end{itemize}
+% subsection repetition (end)
+
+
+\subsection*{Ersetzen von Patterns in Strings} % (fold)
+\label{sub:ersetzen_von_patterns_in_strings}
+Die Methode \texttt{String\#sub} ersetzt das erste Auftreten eines Patterns mit dem in einem Block angegebenen Ausdruck. \texttt{String\#gsub} ersetzt dagegen alle Auftreten eines Patterns durch den Wert des gegebenen Blocks.
+
+
+\lstinputlisting{code/regex_gsub.rb}
+
+% subsection ersetzen_von_patterns_in_strings (end)
 
 % section regular_expressions (end)
 
