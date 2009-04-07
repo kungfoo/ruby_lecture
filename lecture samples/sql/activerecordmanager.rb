@@ -1,4 +1,5 @@
 require "singleton"
+require "rubygems"
 require "sqlite3"
 
 class ActiveRecordManager

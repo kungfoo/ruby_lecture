@@ -1,9 +1,10 @@
 require "collection.rb"
 
 class Jukebox
-  def initialize
+  def initialize(player)
     @collection = Collection.new
     @line = "*" * 42
+    @player = player
   end
   
   def print_songlist
@@ -18,19 +19,9 @@ class Jukebox
   end
   
   def play(collection)
-    collection.each_song { |song| puts "playing song: #{song}........." }
-    nil
+    collection.each_song do |song|
+      puts "playing song #{song} on #{@player}"
+      @player.play(song)
+    end
   end
 end
-
-
-puts "Welcome to Ruby-Jukebox....."
-jb = Jukebox.new
-jb.print_songlist
-
-puts "searching for: 'prim'"
-puts jb.search("prim").pretty_print
-
-puts "playing all songs containing 'mus'"
-jb.play(jb.search("mus"))
-

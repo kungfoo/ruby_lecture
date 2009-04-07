@@ -9,6 +9,7 @@ class CollectionTest < Test::Unit::TestCase
     @foo = Song.from_attributes("Foo Fighters", "Grohl", 230)
     songlist << @abba
     songlist << @foo
+    @collection.songlist = songlist
   end
   
   def teardown

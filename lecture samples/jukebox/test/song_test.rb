@@ -1,5 +1,4 @@
 require "test/unit"
-
 require "song.rb"
 
 class TestSong < Test::Unit::TestCase
@@ -14,7 +13,7 @@ class TestSong < Test::Unit::TestCase
     song = Song.from_attributes("a", "b", 120)
     assert_equal(0, song.seconds)
     
-    song = Song.from_attributes("a", "b", 61)
+    song.length = 61
     assert_equal(1, song.seconds)
   end
   
@@ -24,5 +23,11 @@ class TestSong < Test::Unit::TestCase
     
     song.length = 121
     assert_equal(2, song.minutes)
+    
+    song.length = 60
+    assert_equal(1, song.minutes)
+    
+    song.length = 59
+    assert_equal(0, song.minutes)
   end
 end
