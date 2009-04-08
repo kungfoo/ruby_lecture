@@ -20,7 +20,6 @@ class Jukebox
   
   def play(collection)
     collection.each_song do |song|
-      puts "playing song #{song} on #{@player}"
       @player.play(song)
     end
   end

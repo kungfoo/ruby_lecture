@@ -1,7 +1,10 @@
 require "jukebox.rb"
 require "readline"
+require "cdplayer.rb"
 
-jukebox = Jukebox.new
+
+player = CdPlayer.new
+jukebox = Jukebox.new(player)
 jukebox_methods = (jukebox.methods - Object.new.methods).sort
 
 loop do
