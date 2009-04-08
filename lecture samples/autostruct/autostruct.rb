@@ -3,28 +3,29 @@ class AutoStruct
   def initialize(hash = nil)
     @properties = Hash.new
     if(hash)
-      hash.each{ |key,value| @properties[key] = value }
+      hash.each do |key,value|
+        @properties[key.to_s] = value
+      end
     end
   end
   
   def method_missing(method, *args)
-    puts "#{method} called, args: #{args}"
+    name = method.to_s
     
-    if method =~ /=$/
-      set_property(method, *args)
+    if name =~ /=$/
+      set_property(name, *args)
     else
-      get_property(method)
+      get_property(name)
     end
   end
   
   private
   def set_property(name, *args)
     name.gsub!(/=/, "")
-    @properties[name] = args
+    @properties[name] = args[0]
   end
   
   def get_property(name)
-    puts @properties
     @properties[name]
   end
 end
