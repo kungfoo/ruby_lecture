@@ -22,7 +22,13 @@ class TestZoo < Test::Unit::TestCase
     assert_equal(5, zoo.plants.size)
     
     lion = Lion.new(10, "Leo")
+    tiger = Tiger.new(4, "Tigra")
     
+    zoo << lion
+    zoo << tiger
+    
+    assert_equal(2, zoo.felids.size)
+    assert_equal(0, zoo.birds.size)
   end
   
   def test_non_empty_zoo
