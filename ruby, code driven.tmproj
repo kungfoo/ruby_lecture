@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>lecture samples/json/test/status_test.rb</string>
+	<string>lecture samples/objectspace/person.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -65,7 +65,35 @@
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
-		<key>lecture samples/autostruct/Rakefile</key>
+		<key>lecture samples/objectspace/Rakefile</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>30</integer>
+				<key>line</key>
+				<integer>7</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>lecture samples/objectspace/person.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>2</integer>
+				<key>line</key>
+				<integer>4</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>lecture samples/zoo/Rakefile</key>
 		<dict>
 			<key>caret</key>
 			<dict>
@@ -79,210 +107,140 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>lecture samples/autostruct/autostruct.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>18</integer>
-				<key>line</key>
-				<integer>24</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>lecture samples/autostruct/test/autostruct_test.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>53</integer>
-				<key>line</key>
-				<integer>33</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>lecture samples/json/status.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>4</integer>
-				<key>line</key>
-				<integer>2</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>lecture samples/json/test/status_test.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>4</integer>
-				<key>line</key>
-				<integer>6</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>lecture samples/json/twitter_api.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>45</integer>
-				<key>line</key>
-				<integer>4</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>lecture samples/jukebox/Rakefile</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>3</integer>
-				<key>line</key>
-				<integer>10</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>lecture samples/jukebox/cdplayer.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>36</integer>
-				<key>line</key>
-				<integer>6</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>lecture samples/jukebox/collection.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>15</integer>
-				<key>line</key>
-				<integer>24</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>lecture samples/jukebox/collection.yml</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>16</integer>
-				<key>line</key>
-				<integer>35</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>lecture samples/jukebox/interactive_jukebox.rb</key>
+		<key>lecture samples/zoo/animal.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
 				<integer>20</integer>
 				<key>line</key>
-				<integer>16</integer>
+				<integer>3</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>lecture samples/jukebox/jukebox.rb</key>
+		<key>lecture samples/zoo/bird.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>34</integer>
+				<integer>18</integer>
 				<key>line</key>
-				<integer>21</integer>
+				<integer>4</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>lecture samples/jukebox/song.rb</key>
+		<key>lecture samples/zoo/duck.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>5</integer>
 				<key>line</key>
-				<integer>34</integer>
+				<integer>5</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>lecture samples/jukebox/test/collection_test.rb</key>
+		<key>lecture samples/zoo/felid.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>18</integer>
+				<key>line</key>
+				<integer>4</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>lecture samples/zoo/lion.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>5</integer>
+				<key>line</key>
+				<integer>5</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>lecture samples/zoo/plant.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
 				<integer>3</integer>
 				<key>line</key>
-				<integer>32</integer>
+				<integer>0</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>lecture samples/jukebox/test/jukebox_test.rb</key>
+		<key>lecture samples/zoo/test/animal_test.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>4</integer>
+				<integer>3</integer>
 				<key>line</key>
-				<integer>21</integer>
+				<integer>17</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>lecture samples/jukebox/test/song_test.rb</key>
+		<key>lecture samples/zoo/test/zoo_test.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>32</integer>
+				<integer>35</integer>
 				<key>line</key>
 				<integer>30</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>lecture samples/zoo/tiger.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>18</integer>
+				<key>line</key>
+				<integer>4</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>lecture samples/zoo/zoo.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>2</integer>
+				<key>line</key>
+				<integer>28</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -292,26 +250,23 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>lecture samples/autostruct/autostruct.rb</string>
-		<string>lecture samples/autostruct/test/autostruct_test.rb</string>
-		<string>lecture samples/jukebox/cdplayer.rb</string>
-		<string>lecture samples/jukebox/collection.rb</string>
-		<string>lecture samples/jukebox/collection.yml</string>
-		<string>lecture samples/jukebox/interactive_jukebox.rb</string>
-		<string>lecture samples/jukebox/jukebox.rb</string>
-		<string>lecture samples/jukebox/test/collection_test.rb</string>
-		<string>lecture samples/jukebox/test/jukebox_test.rb</string>
-		<string>lecture samples/json/twitter_api.rb</string>
-		<string>lecture samples/json/status.rb</string>
-		<string>lecture samples/json/test/status_test.rb</string>
-		<string>lecture samples/autostruct/Rakefile</string>
-		<string>lecture samples/jukebox/test/song_test.rb</string>
-		<string>lecture samples/jukebox/Rakefile</string>
-		<string>lecture samples/jukebox/song.rb</string>
+		<string>lecture samples/zoo/animal.rb</string>
+		<string>lecture samples/zoo/bird.rb</string>
+		<string>lecture samples/zoo/test/animal_test.rb</string>
+		<string>lecture samples/zoo/Rakefile</string>
+		<string>lecture samples/zoo/plant.rb</string>
+		<string>lecture samples/objectspace/person.rb</string>
+		<string>lecture samples/objectspace/Rakefile</string>
+		<string>lecture samples/zoo/felid.rb</string>
+		<string>lecture samples/zoo/duck.rb</string>
+		<string>lecture samples/zoo/lion.rb</string>
+		<string>lecture samples/zoo/test/zoo_test.rb</string>
+		<string>lecture samples/zoo/zoo.rb</string>
+		<string>lecture samples/zoo/tiger.rb</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{285, 98}, {1311, 821}}</string>
+	<string>{{222, 145}, {1433, 825}}</string>
 </dict>
 </plist>
