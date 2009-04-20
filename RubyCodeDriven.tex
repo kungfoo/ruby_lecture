@@ -599,9 +599,11 @@ Die Methode \texttt{String\#sub} ersetzt das erste Auftreten eines Patterns mit 
 
 
 
-\chapter{Ruby Types} % (fold)
+\chapter{Ruby Rocks} % (fold)
 \label{cha:ruby_types}
 In diesem Kapitel werden einige der grundlegendsten Klassen aus Ruby-Core und auch aus der Ruby Standard-Library kurz vorgestellt und ein Subset der Funktionen aufgezeigt. Viele der Klassen haben zu viele Funktionen um sie hier alle ausführlich zu erwähnen.
+
+Weiter sind auch Code-Snippets für »grundlegende« Aufgaben abgedruck.
 
 Falls mehr Informationen zur gesamten API gewünscht sind, findet man sie hier: \url{http://www.ruby-doc.org/}.
 
@@ -636,10 +638,43 @@ Falls mehr Informationen zur gesamten API gewünscht sind, findet man sie hier: 
 
 \section{String} % (fold)
 \label{sec:string}
-
-
-
+TODO: Write this
 % section string (end)
+
+
+\section{Reading a file} % (fold)
+\label{sec:reading_a_file}
+TODO: Write
+% section reading_a_file (end)
+
+
+
+\section{Connect to RESTful WS} % (fold)
+\label{sec:connect_to_restful_ws}
+TODO: Write
+% section connect_to_restful_ws (end)
+
+
+\section{Reflection — Introspection} % (fold)
+\label{sec:reflection_introspection}
+TODO: Write
+% section reflection_introspection (end)
+
+
+\section{Threads} % (fold)
+\label{sec:threads}
+TODO: Write
+% section threads (end)
+
+\section{Marshalling mit YAML} % (fold)
+\label{sec:marshalling_mit_yaml}
+TODO: Write
+% section marshalling_mit_yaml (end)
+
+\section{Unit Testing} % (fold)
+\label{sec:unit_testing}
+TODO: Write
+% section unit_testing (end)
 
 
 % chapter ruby_types (end)
@@ -673,6 +708,18 @@ Folgende weitere Befehle sind implementiert:
 \end{itemize}
 
 
+
+
+\section{AutoStruct} % (fold)
+\label{sec:autostruct}
+\texttt{AutoStruct} ist eine Klasse die automatisch einem Objekt neue Attribute hinzufügt, wenn sie mit einem Setter gesetzt werden. Danach sollen die Attribute über einen Getter einfach wieder ausgelesen werden können. Use-Case: Man braucht eine einfache Klasse um ein paar Parameter zusammenzuhalten und will nicht etxra eine Klasse dafür erstellen.
+
+Folgender Code soll damit möglich werden:
+
+\lstinputlisting{code/autostruct.rb}
+
+
+% section autostruct (end)
 
 
 

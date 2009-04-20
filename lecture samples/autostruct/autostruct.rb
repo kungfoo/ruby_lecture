@@ -21,7 +21,7 @@ class AutoStruct
   
   private
   def set_property(name, *args)
-    name.gsub!(/=/, "")
+    name.gsub!("=", "")
     @properties[name] = args[0]
   end
   
