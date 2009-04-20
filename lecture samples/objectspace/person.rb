@@ -3,18 +3,18 @@ class Person
     @name, @lastname = name, lastname
   end
   
-  def find_by_name
+  def Person.find_by_name
     
   end
   
-  def find_by_lastname
+  def Person.find_by_lastname
   end
   
-  def find_by_nameAndLastname
+  def Person.find_by_nameAndLastname
     
   end
   
-  def find_by_nameOrLastName
+  def Person.find_by_nameOrLastName
     
   end
 end
