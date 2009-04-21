@@ -6,17 +6,10 @@ class Person
 
   # TODO: include the object space finder module here.
   include Objectfinder
+  include Comparable
 
   def initialize(name, lastname)
     @name, @lastname = name, lastname
-  end
-  
-  def Person.find_by_name(name)
-    found = nil
-    ObjectSpace.each_object(Person) do |p|
-      found = p if p.name == name
-    end
-    return found
   end
   
   def Person.method_missing(method, *args)
@@ -27,5 +20,9 @@ class Person
   
   def to_s
     "Person: #{name}, #{lastname}"
+  end
+  
+  def <=>(other)
+    name <=> other.name && lastname <=> other.lastname
   end
 end

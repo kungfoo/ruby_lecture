@@ -12,5 +12,8 @@ class TestSimplePredicate < Test::Unit::TestCase
     
     s.value = "Foo"
     assert_equal(false, s.evaluate)
+    
+    s = SimplePredicate.new(peter, :name)
+    assert_equal(false, s.evaluate)
   end
 end

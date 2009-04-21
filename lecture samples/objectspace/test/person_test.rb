@@ -10,7 +10,7 @@ class TestPerson < Test::Unit::TestCase
     @yet_another_guy = "not me", "Foo"
   end
   
-  def _test_find_by_name
+  def test_find_by_name
     found = Person.find_by_name(1)
     assert_not_nil(found)
     assert_equal(@person, found)
@@ -34,7 +34,14 @@ class TestPerson < Test::Unit::TestCase
     assert_equal(@person, found)
   end
   
-  def test_case_name
+  def test_equal
+    p1 = Person.new "Peter", "Sommerlad"
+    p2 = Person.new "Gino", "Paulaitis"
+    p3 = Person.new "Peter", "Sommerlad"
     
+    assert_equal(false, p1 == p2)
+    assert_equal(true, p1 == p1)
+    assert_equal(true, p2 == p2)
+    assert_equal(true, p1 == p3)
   end
 end
