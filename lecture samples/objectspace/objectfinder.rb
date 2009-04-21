@@ -1,28 +1,22 @@
+require "predicatematcher.rb"
+
 module Objectfinder
   module ClassMethods
     
     def find(classname, method, *args)
-      
+      predicates = method.to_s.gsub("find_by_", "")
+      matcher = PredicateMatcher.new(predicates)
       
       ObjectSpace.each_object(classname) do |object|
-        if object.matches_predicate_method?(method, args)
-          return object
-        end
+        return object if matcher.matches?(object, args)
       end
+      
       return nil
     end
-     
-  end
-  
-  module InstanceMethods
-    def matches_predicate_method?(method, *args)
-      puts "matcher method called"
-      false
-    end
+    
   end
   
   def self.included(receiver)
-    receiver.extend         ClassMethods
-    receiver.send :include, InstanceMethods
+    receiver.extend ClassMethods
   end
 end

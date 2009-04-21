@@ -1,4 +1,4 @@
-class Objectpredicate
+class PredicateMatcher
   def initialize(predicates)
     @and_predicates = []
     @or_predicates = []

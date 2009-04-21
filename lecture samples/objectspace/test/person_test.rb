@@ -6,7 +6,8 @@ class TestPerson < Test::Unit::TestCase
   def setup
     @person = Person.new 1,2
     @other_guy = Person.new "Guy", "Other"
-    @different_other_guy = Person.new "Guy", Object.new
+    @different_other_guy = Person.new "other guy", Object.new
+    @yet_another_guy = "not me", "Foo"
   end
   
   def test_find_by_name
