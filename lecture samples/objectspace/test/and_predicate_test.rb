@@ -6,7 +6,6 @@ require "person.rb"
 require "ostruct"
 
 class TestPredicates < Test::Unit::TestCase
-
   def test_single_and_predicate
     peter = Person.new("Peter", "Sommerlad")
 
