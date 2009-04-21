@@ -19,15 +19,6 @@ class Person
     return found
   end
   
-  def Person.find_by_lastname(a)
-  end
-  
-  def Person.find_by_name_and_lastname(a,b)
-  end
-  
-  def Person.find_by_name_or_lastname(a,b)
-  end
-  
   def method_missing(method, *args)
     puts "missing method #{method} called"
   end

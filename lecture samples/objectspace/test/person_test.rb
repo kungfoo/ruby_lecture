@@ -5,6 +5,8 @@ require "person.rb"
 class TestPerson < Test::Unit::TestCase
   def setup
     @person = Person.new 1,2
+    @other_guy = Person.new "Guy", "Other"
+    @different_other_guy = Person.new "Guy", Object.new
   end
   
   def test_find_by_name
