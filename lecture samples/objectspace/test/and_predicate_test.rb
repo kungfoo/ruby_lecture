@@ -20,8 +20,4 @@ class TestPredicates < Test::Unit::TestCase
     a = AndPredicate.new(peter, [:name, :lastname], ["Peter", "Bar"])
     assert_equal(false, a.evaluate)
   end
-  
-  def test_multiple_ands
-    
-  end
 end

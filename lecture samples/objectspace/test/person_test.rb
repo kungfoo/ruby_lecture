@@ -34,6 +34,23 @@ class TestPerson < Test::Unit::TestCase
     assert_equal(@person, found)
   end
 
+  def test_find_by_name_or_lastname
+    found = Person.find_by_name_or_lastname(1,2)
+    assert_not_nil(found)
+    assert_equal(@person, found)
+
+    found = Person.find_by_name_or_lastname(1,"not here right now")
+    assert_not_nil(found)
+    assert_equal(@person, found)
+
+    found = Person.find_by_name_or_lastname("asdf",2)
+    assert_not_nil(found)
+    assert_equal(@person, found)
+
+    found = Person.find_by_name_or_lastname(10,20)
+    assert_nil(found)
+  end
+
   def test_equal
     p1 = Person.new "Peter", "Sommerlad"
     p2 = Person.new "Gino", "Paulaitis"
