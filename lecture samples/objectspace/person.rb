@@ -19,10 +19,6 @@ class Person
     return found
   end
   
-  def method_missing(method, *args)
-    puts "missing method #{method} called"
-  end
-  
   def Person.method_missing(method, *args)
     if method.to_s =~ /^find_by_/
       Person.find(Person, method, args)

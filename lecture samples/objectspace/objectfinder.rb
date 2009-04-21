@@ -5,10 +5,10 @@ module Objectfinder
     
     def find(classname, method, *args)
       predicates = method.to_s.gsub("find_by_", "")
-      matcher = PredicateMatcher.new(predicates)
+      m = PredicateMatcher.new(predicates)
       
       ObjectSpace.each_object(classname) do |object|
-        return object if matcher.matches?(object, args)
+        return object if m.matches?(object, args)
       end
       
       return nil
