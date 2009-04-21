@@ -5,7 +5,7 @@ class Person
   attr_reader :name, :lastname
 
   # TODO: include the object space finder module here.
-  include ObjectFinder
+  include Objectfinder
 
   def initialize(name, lastname)
     @name, @lastname = name, lastname
@@ -33,13 +33,12 @@ class Person
   end
   
   def Person.method_missing(method, *args)
-    if Person.finder_method?(method)
-      find_objects(Person, method, args)
+    if method.to_s =~ /^find_by_/
+      Person.find(Person, method, args)
     end
   end
   
-  private
-  def Person.finder_method?(method)
-    method.to_s =~ /^find_by_/
+  def to_s
+    "Person: #{name}, #{lastname}"
   end
 end
