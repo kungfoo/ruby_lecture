@@ -2,6 +2,8 @@ module Objectfinder
   module ClassMethods
     
     def find(classname, method, *args)
+      
+      
       ObjectSpace.each_object(classname) do |object|
         if object.matches_predicate_method?(method, args)
           return object
