@@ -17,6 +17,7 @@ module Objectfinder
   end
   
   def self.included(receiver)
+    @mixed_class = receiver
     receiver.extend ClassMethods
   end
 end

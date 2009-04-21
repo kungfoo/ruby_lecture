@@ -6,18 +6,7 @@ class AndPredicate < Predicate
   end
   
   def evaluate
-    if @left.kind_of? String
-      left_eval = @object.send(@left) == @lvalue
-    else
-      left_eval = @left.evaluate
-    end
-    
-    if @right.kind_of? String
-      right_eval = @object.send(@right) == @rvalue
-    else
-      right_eval = @right.evaluate
-    end
-    
+    left_eval, right_eval = evaluate_left_and_right
     return left_eval && right_eval
   end
 end
