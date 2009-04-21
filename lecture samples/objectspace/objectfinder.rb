@@ -3,12 +3,12 @@ require "predicatematcher.rb"
 module Objectfinder
   module ClassMethods
     
-    def find(classname, method, *args)
+    def find(classname, method, args = [])
       predicates = method.to_s.gsub("find_by_", "")
-      m = PredicateMatcher.new(predicates)
       
       ObjectSpace.each_object(classname) do |object|
-        return object if m.matches?(object, args)
+        m = PredicateMatcher.new(object, predicates, args)
+        return object if m.matches?
       end
       
       return nil
