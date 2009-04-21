@@ -2,11 +2,16 @@ require "predicate.rb"
 
 class AndPredicate < Predicate
   def to_s
-    "#predicate on #{@object}: #{@left} and #{@right}"
+    "#predicate on #{@object}: " + @predicates.join(" and ")
   end
   
   def evaluate
-    left_eval, right_eval = evaluate_left_and_right
-    return left_eval && right_eval
+    puts self
+    @predicates.each_with_index do |p, i|
+      unless @object.send(p) == @values[i]
+        return false
+      end
+    end
+    true
   end
 end

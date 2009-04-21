@@ -1,19 +1,11 @@
 require "predicate.rb"
 
 class SimplePredicate < Predicate
-  def initialize(object, predicate)
-    super(object, predicate, nil)
-  end
-  
-  def value
-    @lvalue
-  end
-
-  def value=(value)
-    @lvalue = value
+  def initialize(object, predicate, value = nil)
+    super(object, predicate, value)
   end
   
   def evaluate
-    @object.send(@left_predicate) == @lvalue
+    return @object.send(@predicates) == @values
   end
 end

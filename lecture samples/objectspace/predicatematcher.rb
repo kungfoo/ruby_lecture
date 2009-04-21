@@ -4,15 +4,25 @@ require "orpredicate.rb"
 
 class PredicateMatcher
   def initialize(object, predicate_string, args = [])
-    unless predicate_string =~ /_and_|_or_/
-      @predicates = SimplePredicate.new(object, predicate_string)
-      @predicates.value = args[0]
-    else
+    @predicate = nil
+    
+    case predicate_string
+    when /_and_/
+      predicate_string.split(/_and_/).each do |p|
+        #TODO: build new AndPredicate
+      end
+    when /_or_/
       
+    else
+      @predicate = SimplePredicate.new(object, predicate_string, args[0])
     end
   end
 
   def matches?
-    @predicates.evaluate
+    if @predicate
+      @predicate.evaluate
+    else
+      false
+    end
   end
 end
