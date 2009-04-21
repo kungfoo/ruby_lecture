@@ -11,12 +11,12 @@ class Person
     return found
   end
   
-  def Person.find_by_lastname
+  def Person.find_by_lastname(a)
   end
   
-  def Person.find_by_nameAndLastname
+  def Person.find_by_name_and_lastname(a,b)
   end
   
-  def Person.find_by_nameOrLastName
+  def Person.find_by_name_or_lastname(a,b)
   end
 end
