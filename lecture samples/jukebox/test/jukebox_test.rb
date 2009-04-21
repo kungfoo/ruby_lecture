@@ -32,7 +32,7 @@ class TestJukebox < Test::Unit::TestCase
   def create_small_collection
     collection = Collection.new
     songlist = []
-    abba = Song.from_attributes("abba", "schnubb", 300)
+    abba = Song.from_attributes("ABBA", "schnubb", 300)
     foo = Song.from_attributes("Foo Fighters", "Grohl", 230)
     songlist << abba
     songlist << foo
