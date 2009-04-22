@@ -1,6 +1,7 @@
 require "bird.rb"
 require "plant.rb"
 require "felid.rb"
+require "animal.rb"
 
 class Zoo
   def initialize
@@ -9,6 +10,10 @@ class Zoo
   
   def <<(object)
     @objects << object
+  end
+  
+  def animals
+    objects_of_type(Animal)
   end
   
   def birds

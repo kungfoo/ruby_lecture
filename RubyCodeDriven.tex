@@ -635,13 +635,6 @@ Falls mehr Informationen zur gesamten API gewünscht sind, findet man sie hier: 
 % section hash (end)
 
 
-
-\section{String} % (fold)
-\label{sec:string}
-TODO: Write this
-% section string (end)
-
-
 \section{Reading a file} % (fold)
 \label{sec:reading_a_file}
 TODO: Write
@@ -687,6 +680,47 @@ TODO: Write
 
 
 \chapter{Code Snippets zur Vorlesung}
+
+
+\section{Zoo} % (fold)
+\label{sec:zoo}
+Das Zoo-Sample liefert einen Einblick in das Schreiben von Klassen und Vererbung in Ruby. Folgende Klassen sind für den \texttt{Zoo} relevant (Die Subklassen sind jeweils unter der Mutterklasse angeordnet):
+
+\begin{itemize}
+	\item \texttt{Animal} (animal.rb)
+	\begin{itemize}
+		\item \texttt{Bird} (...)
+		\begin{itemize}
+			\item \texttt{Duck}
+		\end{itemize}
+		
+		\item \texttt{Felid}
+		\begin{itemize}
+			\item \texttt{Tiger}
+			\item \texttt{Lion}
+		\end{itemize}
+	\end{itemize}
+	
+	\item \texttt{Plant}
+	\begin{itemize}
+		\item \texttt{Tree}
+	\end{itemize}
+\end{itemize}
+% section zoo (end)
+
+Die Klassen \texttt{Animal, Felid, Lion} etc. zeigen auf, wie klassische Single-Inheritance Vererbung in Ruby funktioniert.
+
+\subsection*{Comparable} % (fold)
+\label{sub:comparable}
+In der Klasse \texttt{Animal} sieht man, wie Objekte in Ruby verglichen werden. Wir verwenden dazu das Mixin \texttt{Comparable} und müssen den »Spaceship-Operator« \texttt{<=>} implementieren. Dadurch erhalten wir die Methoden \texttt{==, >, <, >=} und \texttt{<=} gratis dazu. (Schön nicht?)
+% subsection comparable (end)
+
+\subsection*{kind\_of?} % (fold)
+\label{sub:kind_of_}
+In der Klasse \texttt{Zoo} sehen wir, wie in Ruby auf einfache Weise auf Typinformation zugegriffen werden kann. Dies sollte man nicht zu oft tun, da damit ein grosser Vorteil von Ruby, das Duck-Typing an sich ausgehebelt wird. Allerdings kommt es ganz auf das Problem, das gelöst werden soll an, ob Methoden wie zum Beispiel \texttt{Zoo\#birds} auf diese Weise implementiert werden sollen oder nicht.
+% subsection kind_of_ (end)
+
+
 
 \section{Jukebox}
 \subsection*{Idee}
