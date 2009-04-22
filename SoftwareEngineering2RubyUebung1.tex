@@ -22,6 +22,14 @@
 
 \chapter{Einführung} % (fold)
 \label{cha:einführung}
+
+\section{Grundlegendes} % (fold)
+\label{sec:Grundlegendes}
+Grundlegendes zu den Aufgaben...
+
+% section Grundlegendes (end)
+
+
 \section{Download...} % (fold)
 \label{sec:download_}
 Ruby gibts hier: \url{http://www.ruby-lang.org/}. Laden Sie falls sie die Wahl haben einen 1.8.x Release.
@@ -34,6 +42,71 @@ Starten Sie \texttt{irb} oder \texttt{ruby} und spielen sie ein wenig damit. Geb
 Sie können sich auch diverse Beispiele aus den Lecture Notes ansehen und versuchen sie abzuändern/verstehen.
 % section ruby_starten (end)
 % chapter einführung (end)
+
+
+
+
+
+
+
+
+\chapter{Aufgaben Ruby} % (fold)
+\label{cha:Aufgaben Ruby}
+
+
+
+\section{Zeilen drehen} % (fold)
+\label{sec:Zeilen drehen}
+Schreiben Sie ein Programm welches ein per Command-Line-Argument angegebenes File einliest und die Zeilen in umgekehrter Reihenfolge wieder ausgibt.
+Sollte kein Argument angegeben werden, so lesen Sie von stdin, bis EOF.
+
+% section Zeilen drehen (end)
+
+\section{Wörter zählen} % (fold)
+\label{sec:Wörter zählen}
+Schreiben Sie ein Ruby-Programm welches die Wörter in einem File/String/stdin zählt und eine schöne Zusammenfassung zurückliefert und/oder ausdruckt.
+
+Lösen Sie folgende Punkte iterativ und schreiben Sie dazu jeweils einen Unit-Test für ihren Code:
+
+\begin{itemize}
+  \item Führen Sie die Statistik zuerst für einen String durch und geben Sie eine Datenstruktur zurück, mit der der User der Klasse gut weiter arbeiten kann (z.B. einen Hash).
+  \item Zählen Sie nur ''echte'' Wörter. Benutzen Sie unter Umständen einen Regulären Ausdruck um diese zu erkennen.
+  \item Schreiben sie den Code so, dass sie ihn sowohl für Strings, als auch für Files als auch für stdin verwenden können.
+  \item Sortieren Sie die Wörter nach Häufigkeit und geben sie nur die \texttt{n} häufigsten zurück.
+  \item Schreiben Sie ein Kommandozeileninterface zu ihrem Code, der \texttt{-n} und \texttt{+n} und einen Filenamen als Switches/Parameter akzeptiert.
+  \begin{itemize}
+    \item -n: Die n häufigsten Wörter werden ausgegeben.
+    \item +n: Die n seltensten Wörter.
+  \end{itemize}
+  
+\end{itemize}
+
+
+
+% section Wörter zählen (end)
+
+
+
+
+
+
+
+
+
+% chapter Aufgaben Ruby (end)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \chapter{Aufgaben zu Regular Expressions} % (fold)
@@ -139,10 +212,14 @@ Schreiben Sie ein Ruby Programm, das aus einem Javafile alle Javadoc-Kommentare 
 \end{itemize}
 % section javadoc_entfernen (end)
 
+\section{Zusatz zum Abhängigkeitsfilter (schwierig)} % (fold)
+\label{sec:Zusatz zum Abhängigkeitsfilter}
+Schreiben Sie ihren Filter so um, dass er rekursiv alle inkludierten Files auch analysiert. Die macht natürlich besonders Spass für C/C++.
+Können Sie zyklische Abhängigkeiten erkennen? Bringen Sie ihren Filter dazu das zu tun.
 
+% section Zusatz zum Abhängigkeitsfilter (end)
 
 % chapter aufgaben_zu_regular_expressions (end)
-
 
 
 
