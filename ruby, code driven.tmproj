@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>currentDocument</key>
-	<string>RubyCodeDriven.tex</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -35,8 +33,6 @@
 			<date>2009-04-21T15:14:23Z</date>
 		</dict>
 		<dict>
-			<key>expanded</key>
-			<true/>
 			<key>name</key>
 			<string>img</string>
 			<key>regexFolderFilter</key>
@@ -46,11 +42,15 @@
 		</dict>
 		<dict>
 			<key>filename</key>
+			<string>SoftwareEngineering2RubyUebung1.tex</string>
+			<key>lastUsed</key>
+			<date>2009-04-22T15:14:39Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
 			<string>RubyCodeDriven.tex</string>
 			<key>lastUsed</key>
-			<date>2009-04-21T15:14:48Z</date>
-			<key>selected</key>
-			<true/>
+			<date>2009-04-22T15:14:37Z</date>
 		</dict>
 		<dict>
 			<key>expanded</key>
@@ -66,71 +66,7 @@
 	<key>fileHierarchyDrawerWidth</key>
 	<integer>200</integer>
 	<key>metaData</key>
-	<dict>
-		<key>RubyCodeDriven.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>49</integer>
-				<key>line</key>
-				<integer>157</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>133</integer>
-		</dict>
-		<key>lecture samples/objectspace/objectfinder.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>12</integer>
-				<key>line</key>
-				<integer>16</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>lecture samples/objectspace/person.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>7</integer>
-				<key>line</key>
-				<integer>16</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>lecture samples/zoo/test/animal_test.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>3</integer>
-				<key>line</key>
-				<integer>17</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-	</dict>
-	<key>openDocuments</key>
-	<array>
-		<string>lecture samples/objectspace/person.rb</string>
-		<string>lecture samples/objectspace/objectfinder.rb</string>
-		<string>lecture samples/zoo/test/animal_test.rb</string>
-		<string>RubyCodeDriven.tex</string>
-	</array>
+	<dict/>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
