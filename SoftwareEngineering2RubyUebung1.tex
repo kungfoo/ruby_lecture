@@ -39,7 +39,7 @@ Ruby gibts hier: \url{http://www.ruby-lang.org/}. Laden Sie falls sie die Wahl h
 \label{sec:ruby_starten}
 Starten Sie \texttt{irb} oder \texttt{ruby} und spielen sie ein wenig damit. Geben Sie “Hello World” aus. Iterieren Sie über ein Array, einen Hash. Schreiben sie einen Stack. Seien Sie einfach etwas kreativ :)
 
-Sie können sich auch diverse Beispiele aus den Lecture Notes ansehen und versuchen sie abzuändern/verstehen.
+Sie können sich auch diverse Beispiele aus den Lecture Notes ansehen/in \texttt{irb} eingeben und versuchen sie abzuändern/verstehen.
 % section ruby_starten (end)
 % chapter einführung (end)
 
@@ -52,6 +52,12 @@ Sie können sich auch diverse Beispiele aus den Lecture Notes ansehen und versuc
 
 \chapter{Aufgaben Ruby} % (fold)
 \label{cha:Aufgaben Ruby}
+
+
+\section{The answer to life, the universe and everything} % (fold)
+\label{sec:the_answer_to_life_the_universe_and_everything}
+Schreiben Sie ein Programm, dass einen \texttt{int} \emph{n} als Parameter erhält oder von stdin liest und dann genau \emph{n}-mal “42” je auf einer neuen Zeile ausgibt.
+% section the_answer_to_life_the_universe_and_everything (end)
 
 
 
@@ -73,19 +79,45 @@ Lösen Sie folgende Punkte iterativ und schreiben Sie dazu jeweils einen Unit-Te
   \item Zählen Sie nur ''echte'' Wörter. Benutzen Sie unter Umständen einen Regulären Ausdruck um diese zu erkennen.
   \item Schreiben sie den Code so, dass sie ihn sowohl für Strings, als auch für Files als auch für stdin verwenden können.
   \item Sortieren Sie die Wörter nach Häufigkeit und geben sie nur die \texttt{n} häufigsten zurück.
-  \item Schreiben Sie ein Kommandozeileninterface zu ihrem Code, der \texttt{-n} und \texttt{+n} und einen Filenamen als Switches/Parameter akzeptiert.
+  \item Schreiben Sie ein Kommandozeileninterface zu ihrem Code (separates Ruby-Programm), der \texttt{-n} und \texttt{+n} und einen Filenamen als Switches/Parameter akzeptiert.
   \begin{itemize}
-    \item -n: Die n häufigsten Wörter werden ausgegeben.
-    \item +n: Die n seltensten Wörter.
+    \item \texttt{-n}: Die \emph{n} häufigsten Wörter werden ausgegeben.
+    \item \texttt{+n}: Die \emph{n} seltensten Wörter.
   \end{itemize}
   
 \end{itemize}
 
 
-
 % section Wörter zählen (end)
 
 
+\section{Römische Zahlen} % (fold)
+\label{sec:römische_zahlen}
+Da in Ruby die Basisklassen auch einfach erweitert werden können, ist es für uns möglich Integer als Römische Zahlen darzustellen. Und zwar einfach so, dass die römische Schreibweise einfach eine Präsentationsform der Integer ist.
+
+Sehen Sie sich diesen Artikel an: \url{http://de.wikipedia.org/wiki/R%C3%B6mische_Zahlen}.
+
+Implementieren sie das Umrechnen von \texttt{Integer} in die römische Schreibweise als Erweiterung der Klasse \texttt{Integer}! Beachten sie dabei die Subtraktionsregel, also dass für 4 zum Beispiel IV und für 900 CM geschrieben wird.
+
+\begin{lstlisting}
+class Integer
+  def to_roman
+    # umrechnung nach roman
+  end
+
+  def Integer.from_roman(roman)
+    # zurück rechnen
+  end
+end
+\end{lstlisting}
+
+Tipps:
+\begin{itemize}
+	\item Verwenden Sie für die Werte der verschiedenen Zeichen ein [[...]].
+	\item Schreiben Sie einen Unit-Test!! Sie können zum Beispiel sicherstellen, dass die Zahlen in (1..5000) korrekt hin/zurück konvertiert werden. Einige Spezialfälle sollten Sie vielleicht noch von Hand umrechnen und testen...
+\end{itemize}
+
+% section römische_zahlen (end)
 
 
 
