@@ -25,14 +25,39 @@
 
 \section{Grundlegendes} % (fold)
 \label{sec:Grundlegendes}
-Grundlegendes zu den Aufgaben...
+Die Aufgaben sind ungefähr nach Schwierigkeitsgrad geordnet, Sie können sie aber in beliebiger Reihenfolge lösen.
+
+Am Besten schreiben Sie laufend Unit-Tests zu den Aufgaben. Hier ein kurzer Auszug wie das geht:
+
+\begin{lstlisting}
+require "test/unit"
+require "animal.rb"
+
+class TestAnimal < Test::Unit::TestCase
+  def test_equality
+    a = Animal.new 12, "a"
+    b = Animal.new 10, "b"
+    
+    assert_equal(-1, a<=>b)
+    
+    a.name = "b"
+    assert_equal(1, a<=>b)
+    
+    b.age = 12
+    assert_equal(0, a<=>b)
+    end
+end
+\end{lstlisting}
+
+Ausführen können die den Unit-Test einfach wie jedes andere Ruby-Programm mit \texttt{ruby [filename]}. Sie bekommen dann automatisch eine Auswertung über die Tests und wie viele Assertions ausgeführt wurden und auch wo sie fehlgeschlagen sind.
+
 
 % section Grundlegendes (end)
 
 
 \section{Download...} % (fold)
 \label{sec:download_}
-Ruby gibts hier: \url{http://www.ruby-lang.org/}. Laden Sie falls sie die Wahl haben einen 1.8.x Release.
+Ruby gibts hier: \url{http://www.ruby-lang.org/}. Laden Sie falls sie die Wahl haben einen 1.8.x Release herunter.
 % section download_ (end)
 
 \section{Ruby starten} % (fold)
