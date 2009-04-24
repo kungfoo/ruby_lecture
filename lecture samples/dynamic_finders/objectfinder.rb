@@ -13,10 +13,6 @@ module Objectfinder
       
       return nil
     end
-    
-    def method_missing(method, *args)
-      puts "methodmissing"
-    end
   end
   
   def self.included(receiver)
