@@ -723,6 +723,13 @@ Threads starten ist dank Blocks in Ruby denkbar einfach:
 \chapter{Code Snippets zur Vorlesung}
 
 
+\section{Statistics} % (fold)
+\label{sec:statistics}
+Die Klasse \texttt{CharacterStats} macht etwas ganz einfaches: Sie zählt alle Zeichen in einem String oder File (oder irgendetwas anderem was die Methode \texttt{each\_line} implementiert...).
+Die Zeichen werden in einem Hash gezählt und danach kann nachgefragt werden, welches Zeichen wie oft vorgekommen ist. Weiter kann auch eine Statistik angeordnet nach der absoluten Häufigkeit erstellt werden.
+% section statistics (end)
+
+
 \section{Zoo} % (fold)
 \label{sec:zoo}
 Das Zoo-Sample liefert einen Einblick in das Schreiben von Klassen und Vererbung in Ruby. Folgende Klassen sind für den \texttt{Zoo} relevant (Die Subklassen sind jeweils unter der Mutterklasse angeordnet):
@@ -792,10 +799,35 @@ Folgende weitere Befehle sind implementiert:
 Folgender Code soll damit möglich werden:
 
 \lstinputlisting{code/autostruct.rb}
-
-
 % section autostruct (end)
 
+
+
+\section{JSON} % (fold)
+\label{sec:json}
+Das JSON-Beispiel soll aufzeigen, wie auf einfache Weise auf einen Webservice der zum Beispiel JSON oder XML zurückliefert — es gibt auch solche die YAML liefern können — zugegriffen werden kann.
+
+Die Klasse TwitterApi bietet eine Methode \texttt{timeline} an, welche dann eine Collection von Status-Nachrichten für den gegebenen User lädt.
+
+Interessant sind auch die Klassen \texttt{User} und \texttt{Status} welche beide \texttt{method\_missing} verwenden, um auf die Attribute des JSON-Objektes zuzugreifen — dieses ist einfach ein \texttt{Hash}.
+% section json (end)
+
+
+
+\section{Dynamische Finder} % (fold)
+\label{sec:dynamische_finder}
+Das Beispiel im Ordner dynamic\_finder zeigt, wie dynamische Finder für Objekte als Module implementiert werden können.
+
+Die Klasse \texttt{Person} hat als Attribute: \texttt{name, lastname}.
+
+Folgender Code soll nun möglich werden:
+\begin{lstlisting}
+peter = Person.find_by_name("Peter")
+
+\end{lstlisting}
+
+
+% section dynamische_finder (end)
 
 
 
