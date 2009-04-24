@@ -798,10 +798,29 @@ Folgende weitere Befehle sind implementiert:
 Folgender Code soll damit möglich werden:
 
 \lstinputlisting{code/autostruct.rb}
-
-
 % section autostruct (end)
 
+
+
+\section{JSON} % (fold)
+\label{sec:json}
+Das JSON-Beispiel soll aufzeigen, wie auf einfache Weise auf einen Webservice der zum Beispiel JSON oder XML zurückliefert — es gibt auch solche die YAML liefern können — zugegriffen werden kann.
+
+Die Klasse TwitterApi bietet eine Methode \texttt{timeline} an, welche dann eine Collection von Status-Nachrichten für den gegebenen User lädt.
+
+Interessant sind auch die Klassen \texttt{User} und \texttt{Status} welche beide \texttt{method\_missing} verwenden, um auf die Attribute des JSON-Objektes zuzugreifen — dieses ist einfach ein \texttt{Hash}.
+% section json (end)
+
+
+
+\section{Dynamische Finder} % (fold)
+\label{sec:dynamische_finder}
+Das Beispiel im Ordner dynamic\_finder zeigt, wie dynamische Finder für Objekte als Module implementiert werden können.
+
+Die Klasse \texttt{Person} hat als Attribute: \texttt{name, lastname}.
+
+
+% section dynamische_finder (end)
 
 
 
