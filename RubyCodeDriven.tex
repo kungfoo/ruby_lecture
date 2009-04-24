@@ -87,7 +87,7 @@ Nachfolgend ein paar Beispiele von Methoden, die auf Instanzen von Klassen aufge
 
 Duck-Typing bedeutet dass erst zur Laufzeit überprüft wird, ob ein Objekt über bestimmte Merkmale — wie zum Beispiel Methodennamen und Attribute — verfügt, was zu einer erhöhten Flexibiltät führt. Es wird aber auch die Möglichkeit reduziert, Typen zur Compile-Zeit statisch zu prüfen und solche Fehler im Programm zu finden.
 
-Ein längerer Abschnitt zu Duck-Typing findet sich später im Skript (siehe XXX). Hier einfach noch kurz ein Stück Code, das aufzeigt, wie flexibel und doch ausdrucksstark Code mit Duck-Typing werden kann. Über die Syntax mache man sich hier noch nicht allzu viele Gedanken...
+Hier einfach noch kurz ein Stück Code, das aufzeigt, wie flexibel und doch ausdrucksstark Code mit Duck-Typing werden kann. Über die Syntax mache man sich hier noch nicht allzu viele Gedanken...
 
 \lstinputlisting{code/ducks.rb}
 
@@ -635,41 +635,63 @@ Falls mehr Informationen zur gesamten API gewünscht sind, findet man sie hier: 
 % section hash (end)
 
 
-\section{Reading a file} % (fold)
+\section{Ein File lesen} % (fold)
 \label{sec:reading_a_file}
-TODO: Write
+Eine Datei zeilenweise in einen String einlesen:
+\begin{lstlisting}
+def get_file_as_string(filename)
+  content = ""
+  File.open(filename, "r").each_line do |line|
+    content << line
+  end
+  content
+end
+\end{lstlisting}
+
+
 % section reading_a_file (end)
 
 
 
-\section{Connect to RESTful WS} % (fold)
-\label{sec:connect_to_restful_ws}
-TODO: Write
-% section connect_to_restful_ws (end)
-
-
 \section{Reflection — Introspection} % (fold)
 \label{sec:reflection_introspection}
-TODO: Write
+Den Typ eines Objektes in Ruby können wir ganz einfach herausfinden:
+\lstinputlisting{code/introspection.rb}
+
+\begin{itemize}
+	\item \texttt{instance\_of?}: gibt \texttt{true} zurück, falls ein Objekt eine Instanz einer Klasse ist, allerdings nicht, wenn es eine Instanz einer Subklasse ist.
+	\item \texttt{kind\_of?}: gleich wie \texttt{instance\_of?}, gibt aber \texttt{true} zurück, auch wenn das Objekt eine Instanz einer Subklasse ist.
+	\item \texttt{===}: Wird von \texttt{case} verwendet. Für \texttt{Class}, ist diese Methode ein Alias für \texttt{is\_a?} und \texttt{kind\_of?}.
+\end{itemize}
+
+\subsection*{Methoden eines Objektes} % (fold)
+\label{sub:methoden_eines_objektes}
+Wie man einiges über die Methoden eines Objektes herausfindet:
+
+\lstinputlisting{code/respondto.rb}
+
+
+
+% subsection methoden_eines_objektes (end)
+
+
 % section reflection_introspection (end)
 
 
 \section{Threads} % (fold)
 \label{sec:threads}
-TODO: Write
+Threads starten ist dank Blocks in Ruby denkbar einfach:
+\lstinputlisting{code/threading.rb}
 % section threads (end)
 
-\section{Marshalling mit YAML} % (fold)
-\label{sec:marshalling_mit_yaml}
-TODO: Write
-% section marshalling_mit_yaml (end)
+
 
 \section{Unit Testing} % (fold)
 \label{sec:unit_testing}
-TODO: Write
+\lstinputlisting{code/unittest.rb}
+
+
 % section unit_testing (end)
-
-
 % chapter ruby_types (end)
 
 
