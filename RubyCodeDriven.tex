@@ -10,6 +10,7 @@
 \documentclass[a4book,11pt,twoside]{scrbook}
 \include{dude-template}
 
+
 \begin{document}
 \renewcommand{\theequation}{\thesection.\arabic}
 \addtokomafont{caption}{\small}
@@ -303,9 +304,9 @@ Dies sollte man aber nicht tun — auch wenn man kann:
 
 \section{Module und Mixins} % (fold)
 \label{sec:module_und_mixin}
-Im Gegensatz zu anderen objektorientierten Sprachen unterstützt Ruby nur die einfache Vererbung. Dafür kennt Ruby \emph{Module}. Module sind an sich Sammlungen von Funktionen und Klassen können dann Module als Mixin verwenden und bekommen dadurch ihre Methoden geschenkt. Zusammen mit Duck-Typing ergibt sich ein sehr flexibles Konzept.
+Im Gegensatz zu anderen objektorientierten Sprachen unterstützt Ruby nur die einfache Vererbung. Dafür kennt Ruby \emph{Module}. Module sind an sich Sammlungen von Funktionen und Klassen können dann Module als Mixin verwenden und bekommen dadurch alle ihre Methoden geschenkt. Zusammen mit Duck-Typing ergibt sich daraus ein sehr flexibles Konzept.
 
-Interessant wird das Ganze, wenn der Code aus dem Modul Code aus der Klasse verwenden kann um neue Methoden zu definieren.
+Interessant wird das Ganze, wenn der Code aus dem Modul Methoden aus der Klasse verwenden kann um neue Methoden zu definieren.
 
 So kann eine Klasse, welche die Methode \texttt{each} definiert das Modul \texttt{Enumerable} einmixen und erhält so etwa 20 Methoden \emph{gratis}. Darunter auch besonders nützliche wie:
 \begin{itemize}
@@ -497,7 +498,7 @@ Ruby unterstützt auch den ternären Operator: \texttt{condition ? expr1 : expr2
 \subsection*{Case} % (fold)
 \label{sub:case}
 \begin{quotation}
-	\swashed{»The Ruby \texttt{case} expression is a powerful beast: a multiway \texttt{if} on steroids.« — Programming Ruby, The Pragmatic Programmers Guide }
+	\swashed{\Huge“\normalsize The Ruby \texttt{case} expression is a powerful beast: a multiway \texttt{if}\\* on steroids.\Huge”\normalsize — Programming Ruby, The Pragmatic Programmers Guide }
 \end{quotation}
 
 Nichts könnte wahrer sein als das. Da alles in Ruby einen Wert hat und damit auch mit anderen Werten verglichen werden kann, ist das \texttt{case}-Statement ein extrem mächtiges Werkzeug.
@@ -725,7 +726,9 @@ Threads starten ist dank Blocks in Ruby denkbar einfach:
 
 
 \chapter{Code Snippets zur Vorlesung}
+Alle Beispiele in diesem Verzeichnis kommen mit Unit-Tests und dem gesamten Code. Sie können die Unit-Tests am einfachsten mit dem Ruby Build Tool \texttt{rake} ausführen.
 
+Wechseln sie einfach in ein Verzeichnis, das ein Rakefile enthält und tippen sie \texttt{rake} + [Enter].
 
 \section{Statistics} % (fold)
 \label{sec:statistics}
@@ -875,6 +878,7 @@ Folgende Quellen lieferten Material für diese Lecture Notes:
 
 \begin{itemize}
 	\item »Why's (poignant) guide to ruby«\footnote{\url{http://poignantguide.net/ruby/}}: auflockernde Comics mit den Two Foxes.
+	\item »Programming Ruby: The Pragmatic Programmers Guide«: Einige Beispiele/Texte vom Buch inspiriert.
 \end{itemize}
 % chapter quellen (end)
 
