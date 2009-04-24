@@ -82,12 +82,12 @@ Nachfolgend ein paar Beispiele von Methoden, die auf Instanzen von Klassen aufge
 
 \subsection*{Duck-Typing} % (fold)
 \label{sub:duck_typing}
-\begin{quotation}\swashed{»When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck.« – James Whitcomb Riley}
+\begin{quotation}\swashed{\Huge“\normalsize When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck.\Huge”\normalsize – James Whitcomb Riley}
 \end{quotation}
 
 Duck-Typing bedeutet dass erst zur Laufzeit überprüft wird, ob ein Objekt über bestimmte Merkmale — wie zum Beispiel Methodennamen und Attribute — verfügt, was zu einer erhöhten Flexibiltät führt. Es wird aber auch die Möglichkeit reduziert, Typen zur Compile-Zeit statisch zu prüfen und solche Fehler im Programm zu finden.
 
-Ein längerer Abschnitt zu Duck-Typing findet sich später im Skript (siehe XXX). Hier einfach noch kurz ein Stück Code, das aufzeigt, wie flexibel und doch ausdrucksstark Code mit Duck-Typing werden kann. Über die Syntax mache man sich hier noch nicht allzu viele Gedanken...
+Hier einfach noch kurz ein Stück Code, das aufzeigt, wie flexibel und doch ausdrucksstark Code mit Duck-Typing werden kann. Über die Syntax mache man sich hier noch nicht allzu viele Gedanken...
 
 \lstinputlisting{code/ducks.rb}
 
@@ -296,6 +296,24 @@ Dies sollte man aber nicht tun — auch wenn man kann:
 
 \lstinputlisting{code/plusminus.rb}
 % section klassen_methoden_attribute (end)
+
+
+
+\section{Module und Mixins} % (fold)
+\label{sec:module_und_mixin}
+Im Gegensatz zu anderen objektorientierten Sprachen unterstützt Ruby nur die einfache Vererbung. Dafür kennt Ruby \emph{Module}. Module sind an sich Sammlungen von Funktionen und Klassen können dann Module als Mixin verwenden und bekommen dadurch ihre Methoden geschenkt. Zusammen mit Duck-Typing ergibt sich ein sehr flexibles Konzept.
+
+Interessant wird das Ganze, wenn der Code aus dem Modul Code aus der Klasse verwenden kann um neue Methoden zu definieren.
+
+So kann eine Klasse, welche die Methode \texttt{each} definiert das Modul \texttt{Enumerable} einmixen und erhält so etwa 20 Methoden \emph{gratis}. Darunter auch besonders nützliche wie:
+\begin{itemize}
+	\item \texttt{find}
+	\item \texttt{find\_all}
+	\item \texttt{include?}
+	\item \texttt{collect}
+	\item \texttt{sort}
+\end{itemize}
+% section module_und_mixin (end)
 
 
 \section{Blocks und Closures} % (fold)
@@ -635,41 +653,63 @@ Falls mehr Informationen zur gesamten API gewünscht sind, findet man sie hier: 
 % section hash (end)
 
 
-\section{Reading a file} % (fold)
+\section{Ein File lesen} % (fold)
 \label{sec:reading_a_file}
-TODO: Write
+Eine Datei zeilenweise in einen String einlesen:
+\begin{lstlisting}
+def get_file_as_string(filename)
+  content = ""
+  File.open(filename, "r").each_line do |line|
+    content << line
+  end
+  content
+end
+\end{lstlisting}
+
+
 % section reading_a_file (end)
 
 
 
-\section{Connect to RESTful WS} % (fold)
-\label{sec:connect_to_restful_ws}
-TODO: Write
-% section connect_to_restful_ws (end)
-
-
 \section{Reflection — Introspection} % (fold)
 \label{sec:reflection_introspection}
-TODO: Write
+Den Typ eines Objektes in Ruby können wir ganz einfach herausfinden:
+\lstinputlisting{code/introspection.rb}
+
+\begin{itemize}
+	\item \texttt{instance\_of?}: gibt \texttt{true} zurück, falls ein Objekt eine Instanz einer Klasse ist, allerdings nicht, wenn es eine Instanz einer Subklasse ist.
+	\item \texttt{kind\_of?}: gleich wie \texttt{instance\_of?}, gibt aber \texttt{true} zurück, auch wenn das Objekt eine Instanz einer Subklasse ist.
+	\item \texttt{===}: Wird von \texttt{case} verwendet. Für \texttt{Class}, ist diese Methode ein Alias für \texttt{is\_a?} und \texttt{kind\_of?}.
+\end{itemize}
+
+\subsection*{Methoden eines Objektes} % (fold)
+\label{sub:methoden_eines_objektes}
+Wie man einiges über die Methoden eines Objektes herausfindet:
+
+\lstinputlisting{code/respondto.rb}
+
+
+
+% subsection methoden_eines_objektes (end)
+
+
 % section reflection_introspection (end)
 
 
 \section{Threads} % (fold)
 \label{sec:threads}
-TODO: Write
+Threads starten ist dank Blocks in Ruby denkbar einfach:
+\lstinputlisting{code/threading.rb}
 % section threads (end)
 
-\section{Marshalling mit YAML} % (fold)
-\label{sec:marshalling_mit_yaml}
-TODO: Write
-% section marshalling_mit_yaml (end)
+
 
 \section{Unit Testing} % (fold)
 \label{sec:unit_testing}
-TODO: Write
+\lstinputlisting{code/unittest.rb}
+
+
 % section unit_testing (end)
-
-
 % chapter ruby_types (end)
 
 
@@ -680,6 +720,13 @@ TODO: Write
 
 
 \chapter{Code Snippets zur Vorlesung}
+
+
+\section{Statistics} % (fold)
+\label{sec:statistics}
+Die Klasse \texttt{CharacterStats} macht etwas ganz einfaches: Sie zählt alle Zeichen in einem String oder File (oder irgendetwas anderem was die Methode \texttt{each\_line} implementiert...).
+Die Zeichen werden in einem Hash gezählt und danach kann nachgefragt werden, welches Zeichen wie oft vorgekommen ist. Weiter kann auch eine Statistik angeordnet nach der absoluten Häufigkeit erstellt werden.
+% section statistics (end)
 
 
 \section{Zoo} % (fold)
@@ -751,10 +798,69 @@ Folgende weitere Befehle sind implementiert:
 Folgender Code soll damit möglich werden:
 
 \lstinputlisting{code/autostruct.rb}
-
-
 % section autostruct (end)
 
+
+
+\section{JSON} % (fold)
+\label{sec:json}
+Das JSON-Beispiel soll aufzeigen, wie auf einfache Weise auf einen Webservice der zum Beispiel JSON oder XML zurückliefert — es gibt auch solche die YAML liefern können — zugegriffen werden kann.
+
+Die Klasse TwitterApi bietet eine Methode \texttt{timeline} an, welche dann eine Collection von Status-Nachrichten für den gegebenen User lädt.
+
+Interessant sind auch die Klassen \texttt{User} und \texttt{Status} welche beide \texttt{method\_missing} verwenden, um auf die Attribute des JSON-Objektes zuzugreifen — dieses ist einfach ein \texttt{Hash}.
+% section json (end)
+
+
+
+\section{Dynamische Finder} % (fold)
+\label{sec:dynamische_finder}
+Das Beispiel im Ordner dynamic\_finder zeigt, wie dynamische Finder für Objekte als Module implementiert werden können.
+
+Die Klasse \texttt{Person} hat als Attribute: \texttt{name, lastname}.
+
+Folgender Code soll nun möglich werden:
+\begin{lstlisting}
+peters = Person.find_by_name("Peter")
+peter_sommerlad = \
+	Person.find_by_name_and_lastname("Peter", "Sommerlad")
+
+# aber auch
+peters_sommerlads = \
+	Person.find_by_name_or_lastname("Peter", "Sommerlad")
+\end{lstlisting}
+
+Wenn nun die Klasse Person ein neues Attribut \texttt{address} bekommt, dann soll auch dieser Code sofort möglich sein:
+\begin{lstlisting}
+address = Address.new("Zürcherstrasse", 12)
+
+zürcherstrasse_12_bewohner = \
+	Person.find_by_address(address)
+
+# aber auch
+zürcherstrasse_12_peters = \
+	Person.find_by_name_and_address("Peter", address)
+\end{lstlisting}
+
+\subsection*{Lösung} % (fold)
+\label{sub:lösung}
+Wir lösen das wie folgt:
+
+\begin{enumerate}
+	\item \texttt{Person} erhält ein Mixin \texttt{Objectfinder}
+	\item Wir definieren in der Klasse Person \texttt{method\_missing}
+	\item Danach leiten wir die Calls welche mit »find\_by« anfangen an die Methoden weiter, die wir aus dem \texttt{Objectfinder} erhalten haben.
+	\item Zusammenbasteln der Prädikate um die richtigen Objekte zu matchen.
+	\item Absuchen des \texttt{ObjectSpace} um die Objekte, auf welche das Prädikat passt, zu finden.
+\end{enumerate}
+
+
+Das Absuchen des \texttt{ObjectSpace} könnte natürlich mittels der Prädikate auch gut durch eine Datenbankoperation ersetzt werden.
+
+In dieser Version von \texttt{Objectfinder} wird keine Collection zurückgegeben, da nicht bekannt ist, wann der Garbage Collector die Objekte aus dem \texttt{ObjectSpace} abräumt. Auf einer Datenbank würden die \texttt{or} Operationen natürlich eine Menge von Objekten zurückliefern.
+
+% subsection lösung (end)
+% section dynamische_finder (end)
 
 
 

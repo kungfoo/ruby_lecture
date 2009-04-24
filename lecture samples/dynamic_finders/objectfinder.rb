@@ -10,12 +10,7 @@ module Objectfinder
         m = PredicateMatcher.new(object, predicates, args)
         return object if m.matches?
       end
-      
       return nil
-    end
-    
-    def method_missing(method, *args)
-      puts "methodmissing"
     end
   end
   
