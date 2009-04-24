@@ -82,7 +82,7 @@ Nachfolgend ein paar Beispiele von Methoden, die auf Instanzen von Klassen aufge
 
 \subsection*{Duck-Typing} % (fold)
 \label{sub:duck_typing}
-\begin{quotation}\swashed{»When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck.« – James Whitcomb Riley}
+\begin{quotation}\swashed{\Huge“\normalsize When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck.\Huge”\normalsize – James Whitcomb Riley}
 \end{quotation}
 
 Duck-Typing bedeutet dass erst zur Laufzeit überprüft wird, ob ein Objekt über bestimmte Merkmale — wie zum Beispiel Methodennamen und Attribute — verfügt, was zu einer erhöhten Flexibiltät führt. Es wird aber auch die Möglichkeit reduziert, Typen zur Compile-Zeit statisch zu prüfen und solche Fehler im Programm zu finden.
@@ -296,6 +296,24 @@ Dies sollte man aber nicht tun — auch wenn man kann:
 
 \lstinputlisting{code/plusminus.rb}
 % section klassen_methoden_attribute (end)
+
+
+
+\section{Module und Mixins} % (fold)
+\label{sec:module_und_mixin}
+Im Gegensatz zu anderen objektorientierten Sprachen unterstützt Ruby nur die einfache Vererbung. Dafür kennt Ruby \emph{Module}. Module sind an sich Sammlungen von Funktionen und Klassen können dann Module als Mixin verwenden und bekommen dadurch ihre Methoden geschenkt. Zusammen mit Duck-Typing ergibt sich ein sehr flexibles Konzept.
+
+Interessant wird das Ganze, wenn der Code aus dem Modul Code aus der Klasse verwenden kann um neue Methoden zu definieren.
+
+So kann eine Klasse, welche die Methode \texttt{each} definiert das Modul \texttt{Enumerable} einmixen und erhält so etwa 20 Methoden \emph{gratis}. Darunter auch besonders nützliche wie:
+\begin{itemize}
+	\item \texttt{find}
+	\item \texttt{find\_all}
+	\item \texttt{include?}
+	\item \texttt{collect}
+	\item \texttt{sort}
+\end{itemize}
+% section module_und_mixin (end)
 
 
 \section{Blocks und Closures} % (fold)

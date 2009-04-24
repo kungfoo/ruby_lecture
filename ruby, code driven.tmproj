@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>currentDocument</key>
-	<string>RubyCodeDriven.tex</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -46,15 +44,13 @@
 			<key>filename</key>
 			<string>SoftwareEngineering2RubyUebung1.tex</string>
 			<key>lastUsed</key>
-			<date>2009-04-23T13:56:09Z</date>
+			<date>2009-04-24T06:47:07Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>RubyCodeDriven.tex</string>
 			<key>lastUsed</key>
-			<date>2009-04-23T13:56:09Z</date>
-			<key>selected</key>
-			<true/>
+			<date>2009-04-24T08:46:51Z</date>
 		</dict>
 		<dict>
 			<key>expanded</key>
@@ -70,26 +66,7 @@
 	<key>fileHierarchyDrawerWidth</key>
 	<integer>200</integer>
 	<key>metaData</key>
-	<dict>
-		<key>RubyCodeDriven.tex</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>107</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>76</integer>
-		</dict>
-	</dict>
-	<key>openDocuments</key>
-	<array>
-		<string>RubyCodeDriven.tex</string>
-	</array>
+	<dict/>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
