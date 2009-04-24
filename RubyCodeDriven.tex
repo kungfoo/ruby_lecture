@@ -846,15 +846,20 @@ zürcherstrasse_12_peters = \
 \label{sub:lösung}
 Wir lösen das wie folgt:
 
-\begin{itemize}
+\begin{enumerate}
 	\item \texttt{Person} erhält ein Mixin \texttt{Objectfinder}
 	\item Wir definieren in der Klasse Person \texttt{method\_missing}
 	\item Danach leiten wir die Calls welche mit »find\_by« anfangen an die Methoden weiter, die wir aus dem \texttt{Objectfinder} erhalten haben.
 	\item Zusammenbasteln der Prädikate um die richtigen Objekte zu matchen.
-\end{itemize}
+	\item Absuchen des \texttt{ObjectSpace} um die Objekte, auf welche das Prädikat passt, zu finden.
+\end{enumerate}
+
+
+Das Absuchen des \texttt{ObjectSpace} könnte natürlich mittels der Prädikate auch gut durch eine Datenbankoperation ersetzt werden.
+
+In dieser Version von \texttt{Objectfinder} wird keine Collection zurückgegeben, da nicht bekannt ist, wann der Garbage Collector die Objekte aus dem \texttt{ObjectSpace} abräumt. Auf einer Datenbank würden die \texttt{or} Operationen natürlich eine Menge von Objekten zurückliefern.
+
 % subsection lösung (end)
-
-
 % section dynamische_finder (end)
 
 

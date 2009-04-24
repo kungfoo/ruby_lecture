@@ -10,7 +10,6 @@ module Objectfinder
         m = PredicateMatcher.new(object, predicates, args)
         return object if m.matches?
       end
-      
       return nil
     end
   end
