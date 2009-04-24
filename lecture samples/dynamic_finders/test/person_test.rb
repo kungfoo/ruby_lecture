@@ -4,7 +4,7 @@ require "person.rb"
 
 class TestPerson < Test::Unit::TestCase
   def setup
-    @person = Person.new("Peter","Sommerlad")
+    @peter = Person.new("Peter","Sommerlad")
     @other_guy = Person.new("Guy", "Other")
     @different_other_guy = Person.new("other guy", Object.new)
     @yet_another_guy = Person.new("not me", "Foo")
@@ -13,7 +13,7 @@ class TestPerson < Test::Unit::TestCase
   def test_find_by_name
     found = Person.find_by_name("Peter")
     assert_not_nil(found)
-    assert_equal(@person, found)
+    assert_equal(@peter, found)
 
     found = Person.find_by_name("Guy")
     assert_equal(@other_guy, found)
@@ -22,7 +22,7 @@ class TestPerson < Test::Unit::TestCase
   def test_find_by_lastname
     found = Person.find_by_lastname("Sommerlad")
     assert_not_nil(found)
-    assert_equal(@person, found)
+    assert_equal(@peter, found)
   end
 
   def test_find_by_name_and_lastname
@@ -31,21 +31,21 @@ class TestPerson < Test::Unit::TestCase
 
     found = Person.find_by_name_and_lastname("Peter","Sommerlad")
     assert_not_nil(found)
-    assert_equal(@person, found)
+    assert_equal(@peter, found)
   end
 
   def test_find_by_name_or_lastname
     found = Person.find_by_name_or_lastname("Peter","Sommerlad")
     assert_not_nil(found)
-    assert_equal(@person, found)
+    assert_equal(@peter, found)
 
     found = Person.find_by_name_or_lastname("Peter","not here right now")
     assert_not_nil(found)
-    assert_equal(@person, found)
+    assert_equal(@peter, found)
 
     found = Person.find_by_name_or_lastname("asdf","Sommerlad")
     assert_not_nil(found)
-    assert_equal(@person, found)
+    assert_equal(@peter, found)
 
     found = Person.find_by_name_or_lastname(10,20)
     assert_nil(found)

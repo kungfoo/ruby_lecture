@@ -846,7 +846,12 @@ zürcherstrasse_12_peters = \
 \label{sub:lösung}
 Wir lösen das wie folgt:
 
-
+\begin{itemize}
+	\item \texttt{Person} erhält ein Mixin \texttt{Objectfinder}
+	\item Wir definieren in der Klasse Person \texttt{method\_missing}
+	\item Danach leiten wir die Calls welche mit »find\_by« anfangen an die Methoden weiter, die wir aus dem \texttt{Objectfinder} erhalten haben.
+	\item Zusammenbasteln der Prädikate um die richtigen Objekte zu matchen.
+\end{itemize}
 % subsection lösung (end)
 
 
