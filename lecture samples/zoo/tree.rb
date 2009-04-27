@@ -1,3 +1,5 @@
+require "plant.rb"
+
 class Tree < Plant
   @@number_of_trees = 1
   
