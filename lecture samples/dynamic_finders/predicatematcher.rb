@@ -1,6 +1,7 @@
 require "simplepredicate.rb"
 require "andpredicate.rb"
 require "orpredicate.rb"
+require "person.rb"
 
 class PredicateMatcher
   def initialize(object, predicate_string, args = [])
