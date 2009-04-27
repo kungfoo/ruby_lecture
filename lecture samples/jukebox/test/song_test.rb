@@ -30,6 +30,4 @@ class TestSong < Test::Unit::TestCase
     song.length = 59
     assert_equal(0, song.minutes)
   end
-  
-  
 end
