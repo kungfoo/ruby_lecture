@@ -291,11 +291,11 @@ Dieses Beispiel zeigt gleich einige Aspekte auf, wie in Ruby eine Klasse geschri
 	\item Das \texttt{return}-Statement ist optional, da der letze Wert in der Funktion zurückgegeben wird. Dies ist nur bei \emph{kurzen} Methoden sinnvoll.
 \end{enumerate}
 
-Alle Klassen in Ruby sind \emph{offen} für Erweiterung, was sehr praktisch sein kann und den Code kürzer macht, weil nicht für jedes Feature eine neue Klasse geschrieben werden muss, wenn die Funktion in eine andere Klasse \emph{gehört}.
+Alle Klassen in Ruby sind \emph{offen} für Erweiterung, was sehr praktisch sein kann und den Code kürzer macht, weil nicht für jedes Feature eine neue Klasse geschrieben werden muss, sondern eine bestehende Klasse. zu welcher der Code eigentlich gehört, erweitert werde kann.
 
 \lstinputlisting{code/prime.rb}
 
-Dies sollte man aber nicht tun — auch wenn man kann:
+Folgendes sollte man aber nicht tun — auch wenn man kann:
 
 \lstinputlisting{code/plusminus.rb}
 % section klassen_methoden_attribute (end)
@@ -321,7 +321,7 @@ So kann eine Klasse, welche die Methode \texttt{each} definiert das Modul \textt
 
 \section{Blocks und Closures} % (fold)
 \label{sec:blocks_und_closures}
-Blöcke sind ein essentieller Teil der Sprache Ruby. Code in geschweiften Klammern ist ein Block. Allerdings ist ein Block mehr als nur Code der gruppiert ist.
+Blöcke sind ein essentieller Teil der Sprache Ruby. Code in geschweiften Klammern ist ein Block. Allerdings ist ein Block mehr als nur Code, der gruppiert ist.
 
 Ein Block wird in Ruby eigentlich immer zusammen mit einer Methode verwendet. Damit kann man zum Beispiel Funktionen die über alle Elemente einer Collection iterieren Code mitgeben, der dann für jedes Element ausgeführt wird — so wird der Code innerhalb des Blocks zum \emph{Visitor}.
 
@@ -391,7 +391,7 @@ Dieser Startbutton sieht eigentlich nicht so schlecht aus. Das Ganze erinnert ei
 	\item Die Aktion die ausgeführt wird wenn ein Knopf gedrückt wird, ist am falschen Ort. Die Aktionen sind nicht ein Feature der Buttons sondern der Jukebox, welche die Buttons verwendet. Man sieht das auch daran, dass \texttt{StartButton} eine Referenz auf die Jukebox braucht, obwohl def Button gar nicht wissen \emph{sollte} was für eine Aktion er ausführt.
 \end{enumerate}
 
-Wie können beide dieser Probleme kurz und einfach lösen, indem wir einen Block als Closure verwenden:
+Wir können beide dieser Probleme kurz und einfach lösen, indem wir einen Block als Closure verwenden:
 
 \lstinputlisting{code/jukeboxbutton_good.rb}
 
@@ -624,7 +624,7 @@ Die Methode \texttt{String\#sub} ersetzt das erste Auftreten eines Patterns mit 
 \label{cha:ruby_types}
 In diesem Kapitel werden einige der grundlegendsten Klassen aus Ruby-Core und auch aus der Ruby Standard-Library kurz vorgestellt und ein Subset der Funktionen aufgezeigt. Viele der Klassen haben zu viele Funktionen um sie hier alle ausführlich zu erwähnen.
 
-Weiter sind auch Code-Snippets für »grundlegende« Aufgaben abgedruck.
+Weiter sind auch Code-Snippets für »grundlegende« Aufgaben abgedruckt.
 
 Falls mehr Informationen zur gesamten API gewünscht sind, findet man sie hier: \url{http://www.ruby-doc.org/}.
 
