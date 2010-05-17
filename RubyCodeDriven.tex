@@ -450,7 +450,7 @@ Richtig Spass macht die Sache dann, wenn man anfängt Library-Klassen die einen 
 \label{sec:arrays}
 Arrays von Objekten werden in Ruby zwischen '[]' geschrieben. Die eckigen Klammern werden auch als Indexoperator verwendet.
 
-Dabei kann der Index auch negativ werden. Es wird dann von hinten abgezählt, wobei das letzte Element im Array den Index $-1$ hat — logischerweise ist $-0 == 0$ und damit dies der Index des ersten Elements im Array.
+Dabei kann der Index auch \emph{negativ} werden. Es wird dann von hinten abgezählt, wobei das letzte Element im Array den Index $-1$ hat — logischerweise ist $-0 == 0$ und damit dies der Index des ersten Elements im Array.
 
 \lstinputlisting{code/arrays1.rb}
 
@@ -467,7 +467,7 @@ Weitere Tricks und Kniffe mit Arrays, Strings und Hashes findest du im Kapitel \
 
 \section{Hashes} % (fold)
 \label{sub:hashes}
-Hashes sind Arrays ähnlich werden aber mittels einem Objekt indexiert. Damit kann man ganz einfach Assoziationen zwischen Objekten herstellen.
+Hashes sind Arrays ähnlich werden aber mittels eines Objekts indexiert. Damit kann man ganz einfach Assoziationen zwischen Objekten herstellen.
 
 Irgendein Objekt — also alles in Ruby, auch ein Statement — kann in einem Hash als Key und auch als Value verwendet werden.
 
@@ -543,7 +543,7 @@ Reguläre Ausdrücke werden entweder zwischen /r/ oder mit dem Shorthandle \%r\{
 
 \lstinputlisting{code/regex.rb}
 
-Die Objekte unterstützen danach den Match mit dem Operator =~ (positiver Match) oder mit !~ (negativer Match).
+Die Objekte unterstützen danach den Match mit dem Operator \lstinline{=~} (positiver Match) oder mit \lstinline{!~} (negativer Match).
 
 Nachdem so ein Match versucht wurde, so sind folgende Variablen definiert:
 
