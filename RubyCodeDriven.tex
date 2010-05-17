@@ -256,7 +256,11 @@ Weiter können auch mehrere Variablen elegant und kurz auf Standardwerte gesetzt
 
 \section{Methoden} % (fold)
 \label{sec:methoden}
-Methoden in Ruby werden durch einen '.' an eine Variable oder Konstante angehängt. Es gilt die Konvetion, dass Methoden die einen \texttt{boolean} zurückliefern am Ende ihres Namens ein '?' tragen. Methoden, die ein Objekt direkt verändern und nicht eine Kopie eines veränderten Objektes zurückgeben, tragen ein '!' am Ende ihres Namens.
+Methoden in Ruby werden durch einen '.' an eine Variable oder Konstante angehängt. Es gilt die Konvetion, dass Methoden die einen \texttt{boolean} zurückliefern am Ende ihres Namens ein '?' tragen. Methoden, die eine spezielle Version einer anderen Methode sind werden mit einem '!' markiert. So geben zum Beispiel in der Basisbibliothek viele Methoden eine \emph{veränderte Kopie} des Objektes zurück. Dies hat einige Vorteile. Manchmal möchte man aber keine Kopie erhalten und die Methoden, die jeweils keine Kopie zurpckgeben sind mit '!' markiert:
+
+Hier ein Beispiel dazu mit der Methode \texttt{String\#gsub}:
+
+\lstinputlisting{code/gsub.rb}
 
 Die Klammern können in Ruby in vielen Fällen weggelassen werden, was je nach Situation die Lesbarkeit des Codes erhöht.
 
