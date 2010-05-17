@@ -70,8 +70,6 @@ Der Code beendet das Programm, ausser wenn der String »Restaurant« als Teil »
 Das soll nicht heissen, dass Code der in einer anderen Sprache geschrieben ist schwer zu lesen ist. Vielfach ist das allerdings so und die Konventionen in Ruby machen viele Teile des Codes einfacher zu lesen und befreien ihn von Überraschungen. Mehr dazu im Kapitel \ref{cha:die_syntax_von_ruby}.
 % subsection ruby_ist_einfach_zu_lesen (end)
 
-
-
 \subsection*{Alles ist ein Objekt} % (fold)
 \label{sub:alles_ist_ein_objekt}
 In Ruby ist alles ein Objekt. Wirklich alles --- es gibt in Ruby keine Unterscheidung zwischen »primitiven Datentypen« und »benutzerdefinierten Typen«.
@@ -111,6 +109,9 @@ Code wie der obige lässt sich mit \texttt{instanceof()} auch noch relativ kurz 
 % subsection duck_typing (end)
 
 
+\subsection*{(Fast) platformunabhängig}\label{sub:platforms}
+Es gibt viele Platformen, auf denen Ruby läuft. Man hat zum Beispiel die Auswahl zwischen MRI\footnote{\url{http://www.ruby-lang.org}} und JRuby\footnote{\url{http://www.jruby.org/}}. Mit JRuby kann Ruby-Code auf der JVM (und damit auf allen Systemen wo eine JVM existiert) ausgeführt werden. MRI selbst ist auch auf praktisch allen Platformen verfügbar. Sie können die Beispiele in dieser Vorlesung sowohl mit MRI Ruby 1.8, 1.9 oder JRuby ausführen. Der Einfachheit halber verwenden Sie am besten die am weitesten verbreitete Version 1.8.7 von MRI.
+
 
 \subsection*{Noch viel mehr!} % (fold)
 \label{sub:noch_viel_mehr_}
@@ -137,10 +138,6 @@ Folgende Kernpunkte sollten Ruby auszeichnen:
 	\item Flexibel: Dynamisch typisierte Sprache
 \end{itemize}
 % section woher_kommt_ruby_und_was_ist_das_ziel (end)
-
-
-
-
 
 
 % chapter ruby_noch_eine_sprache_ (end)
