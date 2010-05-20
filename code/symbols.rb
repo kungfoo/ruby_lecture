@@ -1,6 +1,6 @@
-:name # !> unused literal ignored
-:other_name # !> unused literal ignored
-:"Ruby rocks!" # !> unused literal ignored
+:name 
+:other_name
+:"Ruby rocks!"
 
 :name.class      # => Symbol
 :name.object_id  # => 34258

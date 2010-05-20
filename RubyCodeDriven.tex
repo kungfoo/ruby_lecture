@@ -217,9 +217,8 @@ Symbols sind ein spezielles Element von Ruby, verglichen mit anderen Sprachen. E
 
 Symbols sind \emph{leichtgewichtige} Strings. Ein bestimmter Name für ein Symbol erzeugt immer das gleiche Symbol, egal wie oft es im Sourcecode vorkommt.
 
-Als Vergleich: Ein String-Literal (auch in Java) erzeugt \emph{immer} ein neues String-Objekt. Normalerweise verwendet man Symbols dort, wo ein String gebraucht wird, der aber nie auf dem Screen ausgegeben wird, wie zum Beispiel Namen von Methoden oder Hash-Elementen. (Siehe auch das Beispiel zu Duck-Typing)
+Als Vergleich: Ein String-Literal (auch in Java) erzeugt \emph{immer} ein neues String-Objekt. Normalerweise verwendet man Symbols dort, wo ein Name gebraucht wird, der aber nie geändert werden soll, wie zum Beispiel Namen von Methoden oder Hash-Elementen. (Siehe auch das Beispiel zu Duck-Typing)
 
-\newpage
 
 \lstinputlisting{code/symbols.rb}
 % section symbols (end)
@@ -253,7 +252,7 @@ Ruby unterstützt die parallele Zuweisung von Variablen. Das ermöglicht zum Bei
 
 \lstinputlisting{code/swap.rb}
 
-Weiter können auch mehrere Variablen elegant und kurz auf Standardwerte gesetzt werden. Die \emph{kann} die Lesbarkeit erhöhen, kann aber auch am falschen Ort benutzt werden.
+Weiter können auch mehrere Variablen elegant und kurz auf Standardwerte gesetzt werden. Die \emph{kann} die Lesbarkeit erhöhen, kann aber auch für unnötige Verwirrung sorgen, den Einsatz einer parallelen Zuweisung in diesem Sinne abwägen.
 
 \lstinputlisting{code/parallel.rb}
 
@@ -264,7 +263,9 @@ Weiter können auch mehrere Variablen elegant und kurz auf Standardwerte gesetzt
 
 \section{Methoden} % (fold)
 \label{sec:methoden}
-Methoden in Ruby werden durch einen '.' an eine Variable oder Konstante angehängt. Es gilt die Konvetion, dass Methoden die einen \texttt{boolean} zurückliefern am Ende ihres Namens ein '?' tragen. Methoden, die eine spezielle Version einer anderen Methode sind, werden mit einem '!' markiert. So geben zum Beispiel in der Basisbibliothek viele Methoden eine \emph{veränderte Kopie} des Objektes zurück. Dies hat einige Vorteile\footnote{Siehe dazu zum Beispiel das Kapitel Promote Immutability in \emph{Effective Java von Joshua Bloch}}, aber manchmal möchte man aber keine Kopie erhalten und die Methoden, die jeweils keine Kopie zurückgeben sind mit '!' markiert:
+Methoden in Ruby werden durch einen '.' an eine Variable oder Konstante angehängt. Es gilt die Konvetion, dass Methoden die einen \texttt{boolean} zurückliefern am Ende ihres Namens ein '?' tragen.
+
+Methoden, die eine spezielle Version einer anderen Methode sind, werden mit einem '!' markiert. So geben zum Beispiel in der Basisbibliothek viele Methoden eine \emph{veränderte Kopie} des Objektes zurück. Dies hat einige Vorteile\footnote{Siehe dazu zum Beispiel das Kapitel Promote Immutability in \emph{Effective Java von Joshua Bloch}}, aber manchmal möchte man aber keine Kopie erhalten und die Methoden, die jeweils keine Kopie zurückgeben sind mit '!' markiert:
 
 Hier ein Beispiel dazu mit der Methode \texttt{String\#gsub}:
 
@@ -287,14 +288,14 @@ Diese Notation wird dann wichtig, wenn Methode der Ruby-Library verwendet werden
 
 \section{Klassen, Attribute} % (fold)
 \label{sec:klassen_methoden_attribute}
-Gleich ein Beispiel einer Klasse in Ruby:
+Am besten lassen sich die verschiedenen Aspekte von Klassen in Ruby direkt an einem ganzen Beispiel aufzeigen:
 
 \lstinputlisting{code/song.rb}
 
 Dieses Beispiel zeigt gleich einige Aspekte auf, wie in Ruby eine Klasse geschrieben wird:
 
 \begin{enumerate}
-	\item \texttt{attr\_accessor} generiert Getter und Setter für Properties. (Und nimmt als Werte offenbar Symbols gerne entgegen...)
+	\item \texttt{attr\_accessor} generiert Getter und Setter für Properties. (Und nimmt als Werte offenbar \emph{Symbols} gerne entgegen...)
 	\item Man kann Getter und Setter auch als Methoden schreiben. Siehe \texttt{minutes=} und \texttt{minutes}.
 	\item Instanzvariablen fangen mit einem '@' an.
 	\item Klassenvariablen mit '@@'.
@@ -317,16 +318,18 @@ Folgendes sollte man aber nicht tun — auch wenn man kann:
 \label{sec:module_und_mixin}
 Im Gegensatz zu anderen objektorientierten Sprachen unterstützt Ruby nur die einfache Vererbung. Dafür kennt Ruby \emph{Module}. Module sind an sich Sammlungen von Funktionen und Klassen können dann Module als Mixin verwenden und bekommen dadurch alle ihre Methoden geschenkt. Zusammen mit Duck-Typing ergibt sich daraus ein sehr flexibles Konzept.
 
-Interessant wird das Ganze, wenn der Code aus dem Modul Methoden aus der Klasse verwenden kann um neue Methoden zu definieren.
+Interessant wird das Ganze, wenn Code aus dem Modul Methoden aus der Klasse verwenden kann um neue Methoden zu definieren.
 
 So kann eine Klasse, welche die Methode \texttt{each} definiert das Modul \texttt{Enumerable} einmixen und erhält so etwa 20 Methoden \emph{gratis}. Darunter auch besonders nützliche wie:
 \begin{itemize}
-	\item \texttt{find}
-	\item \texttt{find\_all}
-	\item \texttt{include?}
+	\item \texttt{find}: Findet das erste Element in diesem \texttt{Enumerable}, für das ein angegebenes Prädikat \texttt{true} ist.
+	\item \texttt{find\_all}: Findet aller Elemente für die ein Prädikat \texttt{true} ist.
+	\item \texttt{include?}: Gibt es ein Element, für welches das Prädikat \texttt{true} ist?
 	\item \texttt{collect}
 	\item \texttt{sort}
 \end{itemize}
+
+Mehr zu diesen Methoden gleich im nächsten Abschnitt, wenn wir die Art und Weise wie solche Prädikate einfach und angegeben werden können kennen gelernt haben.
 % section module_und_mixin (end)
 
 
@@ -344,6 +347,10 @@ Das sieht dann zum Beispiel so aus:
 Wenn der Code innerhalb des Blockes mehr als ein Statement enthält, so können die '\{\}' durch \texttt{do/end} ersetzt werden:
 
 \lstinputlisting{code/blocks2.rb}
+
+Nun als weiteres Beispiel die versprochene Verwendung der Methoden \texttt{Enumerable\#find} und \texttt{collect}:
+
+\lstinputlisting{code/blocks3.rb}
 
 \subsection*{Methode die einen Block erhält} % (fold)
 \label{sub:methode_die_einen_block_erhält}
