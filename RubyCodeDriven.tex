@@ -460,8 +460,7 @@ Richtig Spass macht die Sache dann, wenn man anfängt Library-Klassen die einen 
 
 \lstinputlisting{code/casedate.rb}
 
-
-
+Achten Sie darauf, dass zum Beispiel das Jahr 2009 kein Schaltjahr ist, also haben wir im Bereich zwischen dem 20.02.2009 und 12.03.2009 keinen Schalttag. Sie können diese Funktionalität ganz einfach auch in einer ihrer Klassen bereitstellen. Sie brauchen wie gesagt, nicht mehr zu tun als die Methode \texttt{next} zu definieren.
 
 
 \section{Arrays} % (fold)
@@ -536,7 +535,7 @@ Da in Ruby jedes Statement einen Wert hat, kann auch \texttt{case} einen Wert zu
 \subsection*{Loops} % (fold)
 \label{sub:loops}
 Auch wenn sie eher selten gebraucht werden — Ruby hat extrem schöne Iteratoren für die meisten Klassen, bei denen es etwas zu iterieren gibt — so enthält Ruby auch Konstrukte für Loops.
-
+Sie lassen sich auch als Modifier für einzelne Statements verwenden, was natürlich die Lesbarkeit erhöhen kann, wie man das zum Beispiel schön ist Zeile 6 des nachfolgenden Beispiels sehen kann.
 \subsubsection*{while} % (fold)
 \label{ssub:while}
 \lstinputlisting{code/while.rb}
