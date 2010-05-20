@@ -1,4 +1,4 @@
-require "song.rb"
+require "song"
 
 class Jukebox
   attr_accessor :songs

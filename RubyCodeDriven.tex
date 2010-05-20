@@ -348,10 +348,6 @@ Wenn der Code innerhalb des Blockes mehr als ein Statement enthält, so können 
 
 \lstinputlisting{code/blocks2.rb}
 
-Nun als weiteres Beispiel die versprochene Verwendung der Methoden \texttt{Enumerable\#find} und \texttt{collect}:
-
-\lstinputlisting{code/blocks3.rb}
-
 \subsection*{Methode die einen Block erhält} % (fold)
 \label{sub:methode_die_einen_block_erhält}
 Eine Methode wie zum Beispiel \texttt{Array\#each} zu schreiben ist in Ruby ganz einfach. Das Keyword \texttt{yield} macht es möglich:
@@ -374,6 +370,10 @@ Kombiniert man die zwei Konzepte Parameter für Blöcke und den Rückgabewert de
 Wie schön ist das um ein Array von Objekten umgekehrt zu sortieren?
 
 Der Code innerhalb des Blockes erhält die zwei Parameter a und b. Der Block wird dann beim Sortieren des Arrays dazu verwendet, die Ordnungsrelation der Elemente zu bestimmen. Der \emph{Spaceship-Operator} <=> ist dabei analog definiert, wie zum Beispiel in Java die Methode \texttt{compareTo()}.
+
+Nun als weiteres Beispiel die versprochene Verwendung der Methoden \texttt{Enumerable\#find} und \texttt{collect}:
+
+\lstinputlisting{code/blocks3.rb}
 
 \subsection*{Einen Parameter in einem Block übernehmen} % (fold)
 \label{sub:subsection_name}
@@ -438,7 +438,7 @@ Ruby unterstützt auch auf einfache Weise Standardwerte für Argumente. Dabei wi
 Auffallend ist hierbei, dass die Argumente von hinten nach vorne ihre default-Werte erhalten. Wird also nur 4 als Wert angegeben, so gibt die Methode das Resultat von 4*3 = 12 aus.
 
 
-Eine variable Anzahl Argumente kann in Ruby erreicht werden indem der Name des Arguments mit einem Splat versehen wird. Logischerweise kann nur das letzte Argument einen Splat tragen, denn wie sollte Ruby sonst wissen, wo die variable Anzahl Argumente anfängt und wo sie aufhört.
+Eine variable Anzahl Argumente kann in Ruby erreicht werden indem der Name des Arguments mit einem \emph{Splat} versehen wird. Logischerweise kann nur das letzte Argument einen Splat tragen, denn wie sollte Ruby sonst wissen, wo die variable Anzahl Argumente anfängt und wo sie aufhört.
 
 \lstinputlisting{code/variable_arguments.rb}
 

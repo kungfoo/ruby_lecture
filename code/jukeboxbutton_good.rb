@@ -1,4 +1,4 @@
-require "button.rb"
+require "button"
 
 class JukeboxButton < Button
   def initialize(label, &action)
