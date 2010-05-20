@@ -3,13 +3,13 @@ class Hash
     other_hash.merge(self)
   end
 
-  def reverse_merge!(other_hash)
+  def default!(other_hash)
     replace(reverse_merge(other_hash))
   end
 end
 
 def open_door(door, options = {})
-  options.reverse_merge! :speed => :slow, :direction => :pull
+  options.default! :speed => :slow, :direction => :pull
   "opening #{door} #{options[:speed]} using #{options[:direction]}"
 end
 

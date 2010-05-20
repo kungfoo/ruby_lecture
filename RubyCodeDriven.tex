@@ -673,14 +673,18 @@ Falls mehr Informationen zur gesamten API gewünscht sind, findet man sie hier: 
 % section hash (end)
 
 
-\section{Named Arguments simulieren} % (fold)
+\section{Named Arguments} % (fold)
 \label{sec:named_arguments_simulieren}
-Ruby hat keine benannten Argumente, wie zum Beispiel Lisp. Allerdings gibt es einen (in der Zwischenzeit fast idiomatischen) Weg, wie benannte Argumente für Methoden implementiert werden können. Die Implementation verwendet Hashes und sieht wie folgt aus:
+Ruby hat keine benannten Argumente, wie zum Beispiel Lisp. Allerdings gibt es einen (in der Zwischenzeit fast idiomatischen) Weg, wie benannte, optionale Argumente für Methoden implementiert werden können. Die Implementation verwendet Hashes und sieht dabei ungefähr wie folgt aus:
 
 \lstinputlisting{code/named_args.rb}
 
-Der Witz dieser Methode ist es, dass es ganz einfach ist, die verschiedenen Argumente mit Standardwerten zu versehen und dass diese überschrieben werden, wenn der Benutzer den richtigen Namen angibt. Der erste Parameter muss dabei aber angegeben werden.
+Der Witz dieser Methode ist, dass es ganz einfach ist, die verschiedenen Argumente mit Standardwerten zu versehen und dass diese überschrieben werden, wenn der Benutzer den richtigen Namen angibt.
+
+Der erste Parameter muss dabei aber angegeben werden (er hat ja keinen Defaultwert).
 Viele Frameworks die in Ruby geschrieben sind, verwenden diese Art der Parameterübergabe. 
+
+Auch dies ist ein schönes Beispiel dafür, dass das Erweitern von bereits existierenden Klassen durchaus nützlich sein kann, wenn man es richtig verwendet. Die Klasse \texttt{Hash} wird hier um die Methode \texttt{default!} erweitert wird, die uns das Setzen der Optionen ganz einfach macht.
 % section named_arguments_simulieren (end)
 
 \section{Ein File lesen} % (fold)
@@ -695,7 +699,7 @@ def get_file_as_string(filename)
   content.join
 end
 \end{lstlisting}
-Wir verwenden hierbei ein Array von Strings um den fertigen String zusammenzusetzen. Damit verhindern wir das unnötige Allozieren von vielen temporären Stringobjekten, wie sie anfallen würden, wenn wir den Operator \texttt{+=} verwenden würden um den String zusammenzusetzen.
+Wir verwenden hierbei ein Array von Strings um den fertigen String zusammenzusetzen. Damit verhindern wir das unnötige Allozieren von vielen temporären Stringobjekten, wie sie anfallen würden, wenn wir den Operator \texttt{+=} verwenden würden um den fertigen Inhalt der Datei zusammenzusetzen.
 
 % section reading_a_file (end)
 
@@ -708,7 +712,7 @@ Den Typ eines Objektes in Ruby können wir ganz einfach herausfinden:
 
 \begin{itemize}
 	\item \texttt{instance\_of?}: gibt \texttt{true} zurück, falls ein Objekt eine Instanz einer Klasse ist, allerdings nicht, wenn es eine Instanz einer Subklasse ist.
-	\item \texttt{kind\_of?}: gleich wie \texttt{instance\_of?}, gibt aber \texttt{true} zurück, auch wenn das Objekt eine Instanz einer Subklasse ist.
+	\item \texttt{kind\_of?}: gleich wie \texttt{instance\_of?}, gibt aber \texttt{true} zurück, auch wenn das Objekt eine Instanz einer Subklasse ist oder wenn es sich um ein Mixin handelt, wenn die Klasse das Modul als Mixin verwendet.
 	\item \texttt{===}: Wird von \texttt{case} verwendet. Für \texttt{Class}, ist diese Methode ein Alias für \texttt{is\_a?} und \texttt{kind\_of?}.
 \end{itemize}
 
@@ -728,7 +732,7 @@ Wie man einiges über die Methoden eines Objektes herausfindet:
 
 \section{Threads} % (fold)
 \label{sec:threads}
-Threads starten ist dank Blocks in Ruby denkbar einfach:
+Threads starten ist dank Closures in Ruby denkbar einfach:
 \lstinputlisting{code/threading.rb}
 % section threads (end)
 

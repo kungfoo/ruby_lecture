@@ -11,3 +11,5 @@ b.instance_of? Integer # => false
 b.instance_of? Fixnum # => true
 
 c.kind_of? Float # => true
+
+[].kind_of? Enumerable # => true
