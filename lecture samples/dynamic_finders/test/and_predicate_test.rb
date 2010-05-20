@@ -1,9 +1,8 @@
 require "test/unit"
 
-require "andpredicate.rb"
-require "orpredicate.rb"
+require "andpredicate"
+require "orpredicate"
 require "person.rb"
-require "ostruct"
 
 class TestPredicates < Test::Unit::TestCase
   def test_single_and_predicate

@@ -1,6 +1,7 @@
 require "test/unit"
 
-require "orpredicate.rb"
+require "orpredicate"
+require "person.rb"
 
 class TestOrpredicate < Test::Unit::TestCase
   def test_single_or_predicate

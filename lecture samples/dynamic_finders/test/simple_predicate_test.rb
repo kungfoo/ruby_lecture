@@ -1,6 +1,7 @@
 require "test/unit"
 
 require "simplepredicate.rb"
+require "person.rb"
 
 class TestSimplePredicate < Test::Unit::TestCase
   def test_simple_predicate

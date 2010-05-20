@@ -50,6 +50,11 @@ class TestPerson < Test::Unit::TestCase
     found = Person.find_by_name_or_lastname(10,20)
     assert_nil(found)
   end
+  
+  def test_find_non_existent_field
+    found = Person.find_by_zap "Foo"
+    assert_nil found
+  end
 
   def test_equal
     p1 = Person.new("Peter", "Sommerlad")

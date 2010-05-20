@@ -14,6 +14,8 @@ class Person
   def Person.method_missing(method, *args)
     if method.to_s =~ /^find_by_/
       Person.find(Person, method, args)
+    else
+      super.method_missing(method, args)
     end
   end
 

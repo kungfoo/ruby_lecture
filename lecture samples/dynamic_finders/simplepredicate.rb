@@ -6,6 +6,10 @@ class SimplePredicate < Predicate
   end
   
   def evaluate
-    return @object.send(@predicates) == @values
+    if @object.respond_to? @predicate
+      @object.send(@predicate) == @values
+    else
+      nil
+    end
   end
 end
