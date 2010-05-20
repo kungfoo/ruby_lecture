@@ -271,6 +271,8 @@ Hier ein Beispiel dazu mit der Methode \texttt{String\#gsub}:
 
 \lstinputlisting{code/gsub.rb}
 
+\newpage
+
 Die Klammern können in Ruby in vielen Fällen weggelassen werden, was je nach Situation die Lesbarkeit des Codes erhöht.
 
 \lstinputlisting{code/methods.rb}
@@ -419,6 +421,7 @@ Wenn nun die Callback-Methode \texttt{button\_pressed} aufgerufen wird, benutzen
 
 Das interessante hierbei ist, dass das \texttt{Proc}-Objekt nun mehr kann, als nur ein schnödes Stück Code. Zusätzlich zum Code des Blocks wird auch noch der Kontext gespeichert in dem der Block definiert wurde. Also der Wert von \texttt{self}, alle Konstanten, Variablen und Methoden die in genau diesem Kontext vorkamen. Der Block kann nun alle diese Information und Funktionalität verwenden.
 
+\newpage
 Damit sieht die Klasse \texttt{Jukebox} neu so aus:
 
 \lstinputlisting{code/jukebox2.rb}
@@ -440,11 +443,8 @@ Auffallend ist hierbei, dass die Argumente von hinten nach vorne ihre default-We
 
 Eine variable Anzahl Argumente kann in Ruby erreicht werden indem der Name des Arguments mit einem \emph{Splat} versehen wird. Logischerweise kann nur das letzte Argument einen Splat tragen, denn wie sollte Ruby sonst wissen, wo die variable Anzahl Argumente anfängt und wo sie aufhört.
 
+\newpage
 \lstinputlisting{code/variable_arguments.rb}
-
-
-
-
 
 
 
@@ -511,7 +511,7 @@ Die beiden Keywords können auch einem einzelnen Statement nachgestellt werden.
 Ruby unterstützt auch den ternären Operator: \texttt{condition ? expr1 : expr2}
 % subsubsection if_unless (end)
 
-
+\newpage
 \subsection*{Case} % (fold)
 \label{sub:case}
 \begin{quotation}
@@ -556,7 +556,7 @@ Until läuft im Gegensatz zu \texttt{while} so lange, bis eine Bedingung zutriff
 \label{sec:regular_expressions}
 Ruby verfügt über eine sehr effiziente Regex-Maschine und da reguläre Ausdrücke direkt als Typ in der Sprache eingebaut sind, tauchen sie hier auch im Kapitel »Syntax« auf.
 
-Reguläre Ausdrücke werden entweder zwischen /r/ oder mit dem Shorthandle \%\emph{Ausdruck}\{\emph{Ausdruck}\} geschrieben.
+Reguläre Ausdrücke werden entweder zwischen /\emph{Ausdruck}/ oder mit dem Shorthandle \%r\{\emph{Ausdruck}\} geschrieben.
 
 \lstinputlisting{code/regex.rb}
 
@@ -683,8 +683,6 @@ Der Witz dieser Methode ist es, dass es ganz einfach ist, die verschiedenen Argu
 Viele Frameworks die in Ruby geschrieben sind, verwenden diese Art der Parameterübergabe. 
 % section named_arguments_simulieren (end)
 
-\newpage
-
 \section{Ein File lesen} % (fold)
 \label{sec:reading_a_file}
 Eine Datei zeilenweise in einen String einlesen:
@@ -702,7 +700,7 @@ Wir verwenden hierbei ein Array von Strings um den fertigen String zusammenzuset
 % section reading_a_file (end)
 
 
-
+\newpage
 \section{Reflection — Introspection} % (fold)
 \label{sec:reflection_introspection}
 Den Typ eines Objektes in Ruby können wir ganz einfach herausfinden:
@@ -714,7 +712,6 @@ Den Typ eines Objektes in Ruby können wir ganz einfach herausfinden:
 	\item \texttt{===}: Wird von \texttt{case} verwendet. Für \texttt{Class}, ist diese Methode ein Alias für \texttt{is\_a?} und \texttt{kind\_of?}.
 \end{itemize}
 
-\newpage
 
 \subsection*{Methoden eines Objektes} % (fold)
 \label{sub:methoden_eines_objektes}
@@ -864,6 +861,8 @@ peter_sommerlad = \
 peters_sommerlads = \
 	Person.find_by_name_or_lastname("Peter", "Sommerlad")
 \end{lstlisting}
+
+\newpage
 
 Wenn nun die Klasse Person ein neues Attribut \texttt{address} bekommt, dann soll auch dieser Code sofort möglich sein:
 \begin{lstlisting}
