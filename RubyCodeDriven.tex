@@ -556,7 +556,7 @@ Until läuft im Gegensatz zu \texttt{while} so lange, bis eine Bedingung zutriff
 \label{sec:regular_expressions}
 Ruby verfügt über eine sehr effiziente Regex-Maschine und da reguläre Ausdrücke direkt als Typ in der Sprache eingebaut sind, tauchen sie hier auch im Kapitel »Syntax« auf.
 
-Reguläre Ausdrücke werden entweder zwischen /r/ oder mit dem Shorthandle \%r\{r\} geschrieben.
+Reguläre Ausdrücke werden entweder zwischen /r/ oder mit dem Shorthandle \%\emph{Ausdruck}\{\emph{Ausdruck}\} geschrieben.
 
 \lstinputlisting{code/regex.rb}
 
@@ -672,6 +672,17 @@ Falls mehr Informationen zur gesamten API gewünscht sind, findet man sie hier: 
 \lstinputlisting{api-code/hash_basic.rb}
 % section hash (end)
 
+
+\section{Named Arguments simulieren} % (fold)
+\label{sec:named_arguments_simulieren}
+Ruby hat keine benannten Argumente, wie zum Beispiel Lisp. Allerdings gibt es einen (in der Zwischenzeit fast idiomatischen) Weg, wie benannte Argumente für Methoden implementiert werden können. Die Implementation verwendet Hashes und sieht wie folgt aus:
+
+\lstinputlisting{code/named_args.rb}
+
+Der Witz dieser Methode ist es, dass es ganz einfach ist, die verschiedenen Argumente mit Standardwerten zu versehen und dass diese überschrieben werden, wenn der Benutzer den richtigen Namen angibt. Der erste Parameter muss dabei aber angegeben werden.
+Viele Frameworks die in Ruby geschrieben sind, verwenden diese Art der Parameterübergabe. 
+% section named_arguments_simulieren (end)
+
 \newpage
 
 \section{Ein File lesen} % (fold)
@@ -679,14 +690,14 @@ Falls mehr Informationen zur gesamten API gewünscht sind, findet man sie hier: 
 Eine Datei zeilenweise in einen String einlesen:
 \begin{lstlisting}
 def get_file_as_string(filename)
-  content = ""
+  content = []
   File.open(filename, "r").each_line do |line|
     content << line
   end
-  content
+  content.join
 end
 \end{lstlisting}
-
+Wir verwenden hierbei ein Array von Strings um den fertigen String zusammenzusetzen. Damit verhindern wir das unnötige Allozieren von vielen temporären Stringobjekten, wie sie anfallen würden, wenn wir den Operator \texttt{+=} verwenden würden um den String zusammenzusetzen.
 
 % section reading_a_file (end)
 
@@ -710,7 +721,6 @@ Den Typ eines Objektes in Ruby können wir ganz einfach herausfinden:
 Wie man einiges über die Methoden eines Objektes herausfindet:
 
 \lstinputlisting{code/respondto.rb}
-
 
 
 % subsection methoden_eines_objektes (end)
@@ -745,7 +755,7 @@ Threads starten ist dank Blocks in Ruby denkbar einfach:
 \chapter{Code Snippets zur Vorlesung}
 Alle Beispiele in diesem Verzeichnis kommen mit Unit-Tests und dem gesamten Code. Sie können die Unit-Tests am einfachsten mit dem Ruby Build Tool \texttt{rake} ausführen.
 
-Wechseln sie einfach in ein Verzeichnis, das ein Rakefile enthält und tippen sie \texttt{rake} + [Enter].
+Wechseln sie einfach in ein Verzeichnis, das ein Rakefile enthält und tippen sie \texttt{rake} [Enter].
 
 \section{Statistics} % (fold)
 \label{sec:statistics}
