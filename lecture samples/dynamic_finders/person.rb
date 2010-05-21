@@ -15,7 +15,7 @@ class Person
     if method.to_s =~ /^find_by_/
       Person.find(Person, method, args)
     else
-      super.method_missing(method, args)
+      super.method_missing(method, args) # need to pass on other methods.
     end
   end
 

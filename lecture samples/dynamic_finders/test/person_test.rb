@@ -55,6 +55,13 @@ class TestPerson < Test::Unit::TestCase
     found = Person.find_by_zap "Foo"
     assert_nil found
   end
+  
+  def test_use_non_existent_method
+    assert_raise NoMethodError do
+      Person.foo # this method should not be eaten by the dynamic finder!
+    end
+  end
+  
 
   def test_equal
     p1 = Person.new("Peter", "Sommerlad")
