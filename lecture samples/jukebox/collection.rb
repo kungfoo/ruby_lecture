@@ -7,9 +7,8 @@ class Collection
   attr_accessor :songlist
   
   def initialize
-    @songlist = []
     songs = YAML.load_file(COLLECTION_FILE)
-    songs.each { |hash| @songlist << Song.new(hash) }
+    @songlist = songs.collect{ |hash| Song.new(hash) }
   end
   
   def pretty_print

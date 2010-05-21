@@ -18,9 +18,23 @@ class Jukebox
     @collection.filter(string)
   end
   
-  def play(collection)
-    collection.each_song do |song|
-      @player.play(song)
+  def play(arg)
+    case arg
+      when Collection
+        play_collection arg
+      when Integer
+        play_single_song arg
     end
+  end
+  
+  private
+  def play_collection(collection)
+    collection.each_song do |song|
+      @player.play song
+    end
+  end
+  
+  def play_single_song(num)
+    @player.play @collection.songlist[num]
   end
 end

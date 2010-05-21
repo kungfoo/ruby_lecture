@@ -30,4 +30,9 @@ class CollectionTest < Test::Unit::TestCase
     @collection.each_song{ |i| count += 1 }
     assert(2, count)
   end
+  
+  def test_load_file_with_songs
+    @collection = Collection.new
+    assert_equal(9, @collection.songlist.size)   
+  end
 end
