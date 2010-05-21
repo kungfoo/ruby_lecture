@@ -9,7 +9,6 @@ class TestPredicates < Test::Unit::TestCase
     peter = Person.new("Peter", "Sommerlad")
 
     a = AndPredicate.new(peter, [:name, :lastname], ["Peter", "Sommerlad"])
-
     assert_equal(true, a.evaluate)
 
     a = AndPredicate.new(peter, [:name, :lastname], ["Foo", "Sommerlad"])
