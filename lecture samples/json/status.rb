@@ -1,5 +1,6 @@
 require "rubygems"
 require "json"
+require "user.rb"
 
 class Status
   attr_accessor :user
