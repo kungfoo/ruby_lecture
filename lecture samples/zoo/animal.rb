@@ -9,9 +9,9 @@ class Animal
   
   def <=>(other)
     if name == other.name
-      return age <=> other.age
+      age <=> other.age
     else
-      return name <=> other.name
+      name <=> other.name
     end
   end
 end
